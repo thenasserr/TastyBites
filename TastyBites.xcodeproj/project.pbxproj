@@ -26,6 +26,8 @@
 		D68C70772B3381FF005C80F6 /* DishPortraitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70752B3381FF005C80F6 /* DishPortraitCollectionViewCell.swift */; };
 		D68C70782B3381FF005C80F6 /* DishPortraitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68C70762B3381FF005C80F6 /* DishPortraitCollectionViewCell.xib */; };
 		D68C707B2B3383E7005C80F6 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C707A2B3383E7005C80F6 /* Dish.swift */; };
+		D68C707F2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C707D2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift */; };
+		D68C70802B3387FF005C80F6 /* DishLandscapeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68C707E2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		D68C70752B3381FF005C80F6 /* DishPortraitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishPortraitCollectionViewCell.swift; sourceTree = "<group>"; };
 		D68C70762B3381FF005C80F6 /* DishPortraitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishPortraitCollectionViewCell.xib; sourceTree = "<group>"; };
 		D68C707A2B3383E7005C80F6 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		D68C707D2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishLandscapeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D68C707E2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishLandscapeCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7E52CE5916BF14B0A6A5A65 /* Pods-TastyBites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyBites.release.xcconfig"; path = "Target Support Files/Pods-TastyBites/Pods-TastyBites.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +178,7 @@
 		D68C70682B337ABC005C80F6 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				D68C707C2B3387E1005C80F6 /* DishLandscapeCollectionViewCell */,
 				D68C70742B3381D7005C80F6 /* DishPortraitCollectionViewCell */,
 				D68C70792B338208005C80F6 /* CategoryCollectionViewCell */,
 			);
@@ -204,6 +209,15 @@
 				D68C706A2B337AE1005C80F6 /* CategoryCollectionViewCell.xib */,
 			);
 			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		D68C707C2B3387E1005C80F6 /* DishLandscapeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D68C707D2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift */,
+				D68C707E2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.xib */,
+			);
+			path = DishLandscapeCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		E01513ECD1531F1E5DF2C3BE /* Pods */ = {
@@ -279,6 +293,7 @@
 				D68C70502B336277005C80F6 /* LaunchScreen.storyboard in Resources */,
 				D68C70782B3381FF005C80F6 /* DishPortraitCollectionViewCell.xib in Resources */,
 				D68C704D2B336277005C80F6 /* Assets.xcassets in Resources */,
+				D68C70802B3387FF005C80F6 /* DishLandscapeCollectionViewCell.xib in Resources */,
 				D68C704B2B336276005C80F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +355,7 @@
 				D68C705C2B336667005C80F6 /* OnboardingViewController.swift in Sources */,
 				D68C70672B337830005C80F6 /* HomeViewController.swift in Sources */,
 				D68C706E2B337BEC005C80F6 /* DishCategory.swift in Sources */,
+				D68C707F2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift in Sources */,
 				D68C70702B337CC8005C80F6 /* String+Ext.swift in Sources */,
 				D68C70732B337F7B005C80F6 /* CardView.swift in Sources */,
 				D68C70632B336D68005C80F6 /* OnboardingCollectionViewCell.swift in Sources */,

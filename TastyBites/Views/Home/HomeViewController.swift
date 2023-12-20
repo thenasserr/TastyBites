@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
   //MARK: - Outlets
   @IBOutlet weak var categoryCollectionView: UICollectionView!
   @IBOutlet weak var popularColletionView: UICollectionView!
-  
+  @IBOutlet weak var specialsCollectionView: UICollectionView!
   //MARK: - Vars
   var categories: [DishCategory] = [
     .init(id: "id1", name: "Africa Dish1", image: "https://picsum.photos/200/300"),
@@ -26,7 +26,13 @@ class HomeViewController: UIViewController {
     .init(id: "id", name: "Garri", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 123),
     .init(id: "id", name: "Indomi", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 500),
     .init(id: "id", name: "Pizza", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 333),
+    .init(id: "id", name: "Pizza", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 333),
     .init(id: "id", name: "Pizza", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 333)
+  ]
+
+  var specials: [Dish] = [
+    .init(id: "id", name: "Fried Plantain", description: "This is My Favourite Dish", image: "https://picsum.photos/200/300", calories: 123),
+    .init(id: "id", name: "Beans and Garri", description: "This is My Favourite Dish", image: "https://picsum.photos/200/300", calories: 123)
   ]
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +45,8 @@ class HomeViewController: UIViewController {
     categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
 
     popularColletionView.register(UINib(nibName: DishPortraitCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DishPortraitCollectionViewCell.identifier)
+
+    specialsCollectionView.register(UINib(nibName: DishLandscapeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DishLandscapeCollectionViewCell.identifier)
   }
 }
 
@@ -49,6 +57,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
       return categories.count
     case popularColletionView:
       return populars.count
+    case specialsCollectionView:
+      return specials.count
     default:
       return 0
     }
@@ -62,6 +72,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     case popularColletionView:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DishPortraitCollectionViewCell.identifier, for: indexPath) as! DishPortraitCollectionViewCell
       cell.setup(dish: populars[indexPath.row])
+      return cell
+    case specialsCollectionView:
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DishLandscapeCollectionViewCell.identifier, for: indexPath) as! DishLandscapeCollectionViewCell
+      cell.setup(dish: specials[indexPath.row])
       return cell
     default:
       return UICollectionViewCell()
