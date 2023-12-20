@@ -35,6 +35,7 @@ class OnboardingViewController: UIViewController {
       .init(title: "World-Class Chefs", description: "Our dishes are prepared by only the best.", image: UIImage(named: "slide2")!),
       .init(title: "Instant World-Wide Delivery", description: "Your orders will be delivered instantly irrespective of your location around the world.", image: UIImage(named: "slide3")!)
     ]
+    pageControl.numberOfPages = slides.count
     }
   
 

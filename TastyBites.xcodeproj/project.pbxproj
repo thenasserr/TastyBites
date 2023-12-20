@@ -16,6 +16,7 @@
 		D68C705F2B336A5E005C80F6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C705E2B336A5E005C80F6 /* UIView+Ext.swift */; };
 		D68C70612B336B2E005C80F6 /* OnboardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70602B336B2E005C80F6 /* OnboardingSlides.swift */; };
 		D68C70632B336D68005C80F6 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70622B336D68005C80F6 /* OnboardingCollectionViewCell.swift */; };
+		D68C70672B337830005C80F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70662B337830005C80F6 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D68C705E2B336A5E005C80F6 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		D68C70602B336B2E005C80F6 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
 		D68C70622B336D68005C80F6 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		D68C70662B337830005C80F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +64,12 @@
 		D68C70422B336276005C80F6 /* TastyBites */ = {
 			isa = PBXGroup;
 			children = (
+				D68C70642B337701005C80F6 /* Resources */,
 				D68C705D2B336A39005C80F6 /* Extensions */,
 				D68C70592B336641005C80F6 /* CustomViews */,
 				D68C70582B33663C005C80F6 /* Views */,
 				D68C70572B336635005C80F6 /* Models */,
-				D68C70432B336276005C80F6 /* AppDelegate.swift */,
-				D68C70452B336276005C80F6 /* SceneDelegate.swift */,
 				D68C70492B336276005C80F6 /* Main.storyboard */,
-				D68C704C2B336277005C80F6 /* Assets.xcassets */,
 				D68C704E2B336277005C80F6 /* LaunchScreen.storyboard */,
 				D68C70512B336277005C80F6 /* Info.plist */,
 			);
@@ -87,6 +87,7 @@
 		D68C70582B33663C005C80F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D68C70652B337820005C80F6 /* Home */,
 				D68C705A2B336651005C80F6 /* Onboarding */,
 			);
 			path = Views;
@@ -114,6 +115,24 @@
 				D68C705E2B336A5E005C80F6 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D68C70642B337701005C80F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D68C70432B336276005C80F6 /* AppDelegate.swift */,
+				D68C70452B336276005C80F6 /* SceneDelegate.swift */,
+				D68C704C2B336277005C80F6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D68C70652B337820005C80F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D68C70662B337830005C80F6 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +211,7 @@
 				D68C70612B336B2E005C80F6 /* OnboardingSlides.swift in Sources */,
 				D68C70462B336276005C80F6 /* SceneDelegate.swift in Sources */,
 				D68C705C2B336667005C80F6 /* OnboardingViewController.swift in Sources */,
+				D68C70672B337830005C80F6 /* HomeViewController.swift in Sources */,
 				D68C70632B336D68005C80F6 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
