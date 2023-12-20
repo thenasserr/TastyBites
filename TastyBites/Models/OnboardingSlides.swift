@@ -5,4 +5,10 @@
 //  Created by Ibrahim Nasser Ibrahim on 20/12/2023.
 //
 
-import Foundation
+import UIKit
+
+struct OnboardingSlides {
+  let title: String
+  let description: String
+  let image: UIImage
+}
