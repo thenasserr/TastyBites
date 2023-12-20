@@ -28,6 +28,8 @@
 		D68C707B2B3383E7005C80F6 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C707A2B3383E7005C80F6 /* Dish.swift */; };
 		D68C707F2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C707D2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift */; };
 		D68C70802B3387FF005C80F6 /* DishLandscapeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68C707E2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.xib */; };
+		D68C70832B33A100005C80F6 /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70822B33A100005C80F6 /* DishDetailViewController.swift */; };
+		D68C70852B33A2D9005C80F6 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70842B33A2D9005C80F6 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		D68C707A2B3383E7005C80F6 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		D68C707D2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishLandscapeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D68C707E2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishLandscapeCollectionViewCell.xib; sourceTree = "<group>"; };
+		D68C70822B33A100005C80F6 /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
+		D68C70842B33A2D9005C80F6 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		F7E52CE5916BF14B0A6A5A65 /* Pods-TastyBites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyBites.release.xcconfig"; path = "Target Support Files/Pods-TastyBites/Pods-TastyBites.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +128,7 @@
 		D68C70582B33663C005C80F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D68C70812B33A0E8005C80F6 /* DishDetail */,
 				D68C70652B337820005C80F6 /* Home */,
 				D68C705A2B336651005C80F6 /* Onboarding */,
 			);
@@ -153,6 +158,7 @@
 			children = (
 				D68C705E2B336A5E005C80F6 /* UIView+Ext.swift */,
 				D68C706F2B337CC8005C80F6 /* String+Ext.swift */,
+				D68C70842B33A2D9005C80F6 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +224,14 @@
 				D68C707E2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.xib */,
 			);
 			path = DishLandscapeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		D68C70812B33A0E8005C80F6 /* DishDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D68C70822B33A100005C80F6 /* DishDetailViewController.swift */,
+			);
+			path = DishDetail;
 			sourceTree = "<group>";
 		};
 		E01513ECD1531F1E5DF2C3BE /* Pods */ = {
@@ -353,6 +367,7 @@
 				D68C70612B336B2E005C80F6 /* OnboardingSlides.swift in Sources */,
 				D68C70462B336276005C80F6 /* SceneDelegate.swift in Sources */,
 				D68C705C2B336667005C80F6 /* OnboardingViewController.swift in Sources */,
+				D68C70832B33A100005C80F6 /* DishDetailViewController.swift in Sources */,
 				D68C70672B337830005C80F6 /* HomeViewController.swift in Sources */,
 				D68C706E2B337BEC005C80F6 /* DishCategory.swift in Sources */,
 				D68C707F2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift in Sources */,
@@ -360,6 +375,7 @@
 				D68C70732B337F7B005C80F6 /* CardView.swift in Sources */,
 				D68C70632B336D68005C80F6 /* OnboardingCollectionViewCell.swift in Sources */,
 				D68C707B2B3383E7005C80F6 /* Dish.swift in Sources */,
+				D68C70852B33A2D9005C80F6 /* UIViewController+Ext.swift in Sources */,
 				D68C70772B3381FF005C80F6 /* DishPortraitCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
