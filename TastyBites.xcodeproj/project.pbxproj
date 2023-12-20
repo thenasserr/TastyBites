@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4FFD0C9BC3D6B176F6AE01 /* Pods_TastyBites.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5AB2554E0B50AC8D7360D6 /* Pods_TastyBites.framework */; };
 		D68C70442B336276005C80F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70432B336276005C80F6 /* AppDelegate.swift */; };
 		D68C70462B336276005C80F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70452B336276005C80F6 /* SceneDelegate.swift */; };
 		D68C704B2B336276005C80F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68C70492B336276005C80F6 /* Main.storyboard */; };
@@ -17,9 +18,16 @@
 		D68C70612B336B2E005C80F6 /* OnboardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70602B336B2E005C80F6 /* OnboardingSlides.swift */; };
 		D68C70632B336D68005C80F6 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70622B336D68005C80F6 /* OnboardingCollectionViewCell.swift */; };
 		D68C70672B337830005C80F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70662B337830005C80F6 /* HomeViewController.swift */; };
+		D68C706B2B337AE1005C80F6 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70692B337AE1005C80F6 /* CategoryCollectionViewCell.swift */; };
+		D68C706C2B337AE1005C80F6 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D68C706A2B337AE1005C80F6 /* CategoryCollectionViewCell.xib */; };
+		D68C706E2B337BEC005C80F6 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C706D2B337BEC005C80F6 /* DishCategory.swift */; };
+		D68C70702B337CC8005C80F6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C706F2B337CC8005C80F6 /* String+Ext.swift */; };
+		D68C70732B337F7B005C80F6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70722B337F7B005C80F6 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E5AB2554E0B50AC8D7360D6 /* Pods_TastyBites.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TastyBites.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78E82DFB62FA121CF4F0BE87 /* Pods-TastyBites.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyBites.debug.xcconfig"; path = "Target Support Files/Pods-TastyBites/Pods-TastyBites.debug.xcconfig"; sourceTree = "<group>"; };
 		D68C70402B336276005C80F6 /* TastyBites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TastyBites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D68C70432B336276005C80F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D68C70452B336276005C80F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +40,12 @@
 		D68C70602B336B2E005C80F6 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
 		D68C70622B336D68005C80F6 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		D68C70662B337830005C80F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D68C70692B337AE1005C80F6 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D68C706A2B337AE1005C80F6 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		D68C706D2B337BEC005C80F6 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
+		D68C706F2B337CC8005C80F6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		D68C70722B337F7B005C80F6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F7E52CE5916BF14B0A6A5A65 /* Pods-TastyBites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyBites.release.xcconfig"; path = "Target Support Files/Pods-TastyBites/Pods-TastyBites.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4FFD0C9BC3D6B176F6AE01 /* Pods_TastyBites.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BEBC5D373437308D72A1C93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E5AB2554E0B50AC8D7360D6 /* Pods_TastyBites.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D68C70372B336276005C80F6 = {
 			isa = PBXGroup;
 			children = (
 				D68C70422B336276005C80F6 /* TastyBites */,
 				D68C70412B336276005C80F6 /* Products */,
+				E01513ECD1531F1E5DF2C3BE /* Pods */,
+				1BEBC5D373437308D72A1C93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				D68C70602B336B2E005C80F6 /* OnboardingSlides.swift */,
+				D68C706D2B337BEC005C80F6 /* DishCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,6 +122,8 @@
 		D68C70592B336641005C80F6 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				D68C70712B337F6E005C80F6 /* CardView */,
+				D68C70682B337ABC005C80F6 /* CollectionViewCells */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -113,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				D68C705E2B336A5E005C80F6 /* UIView+Ext.swift */,
+				D68C706F2B337CC8005C80F6 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +164,32 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D68C70682B337ABC005C80F6 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				D68C70692B337AE1005C80F6 /* CategoryCollectionViewCell.swift */,
+				D68C706A2B337AE1005C80F6 /* CategoryCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		D68C70712B337F6E005C80F6 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				D68C70722B337F7B005C80F6 /* CardView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		E01513ECD1531F1E5DF2C3BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78E82DFB62FA121CF4F0BE87 /* Pods-TastyBites.debug.xcconfig */,
+				F7E52CE5916BF14B0A6A5A65 /* Pods-TastyBites.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D68C70542B336277005C80F6 /* Build configuration list for PBXNativeTarget "TastyBites" */;
 			buildPhases = (
+				13D93AC24B46F7B17CFC7799 /* [CP] Check Pods Manifest.lock */,
 				D68C703C2B336276005C80F6 /* Sources */,
 				D68C703D2B336276005C80F6 /* Frameworks */,
 				D68C703E2B336276005C80F6 /* Resources */,
+				651D98FBC230D27E3B463C0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68C706C2B337AE1005C80F6 /* CategoryCollectionViewCell.xib in Resources */,
 				D68C70502B336277005C80F6 /* LaunchScreen.storyboard in Resources */,
 				D68C704D2B336277005C80F6 /* Assets.xcassets in Resources */,
 				D68C704B2B336276005C80F6 /* Main.storyboard in Resources */,
@@ -201,17 +259,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13D93AC24B46F7B17CFC7799 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TastyBites-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		651D98FBC230D27E3B463C0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TastyBites/Pods-TastyBites-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TastyBites/Pods-TastyBites-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TastyBites/Pods-TastyBites-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D68C703C2B336276005C80F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68C706B2B337AE1005C80F6 /* CategoryCollectionViewCell.swift in Sources */,
 				D68C705F2B336A5E005C80F6 /* UIView+Ext.swift in Sources */,
 				D68C70442B336276005C80F6 /* AppDelegate.swift in Sources */,
 				D68C70612B336B2E005C80F6 /* OnboardingSlides.swift in Sources */,
 				D68C70462B336276005C80F6 /* SceneDelegate.swift in Sources */,
 				D68C705C2B336667005C80F6 /* OnboardingViewController.swift in Sources */,
 				D68C70672B337830005C80F6 /* HomeViewController.swift in Sources */,
+				D68C706E2B337BEC005C80F6 /* DishCategory.swift in Sources */,
+				D68C70702B337CC8005C80F6 /* String+Ext.swift in Sources */,
+				D68C70732B337F7B005C80F6 /* CardView.swift in Sources */,
 				D68C70632B336D68005C80F6 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,12 +463,14 @@
 		};
 		D68C70552B336277005C80F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78E82DFB62FA121CF4F0BE87 /* Pods-TastyBites.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z9VC2L39AT;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TastyBites/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -387,12 +493,14 @@
 		};
 		D68C70562B336277005C80F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7E52CE5916BF14B0A6A5A65 /* Pods-TastyBites.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z9VC2L39AT;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TastyBites/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
