@@ -8,14 +8,24 @@
 import Foundation
 
 struct NetworkService {
-  
+
+  static let shared = NetworkService()
+
+  private init() {}
+
+  func myRequest() {
+    request(route: .temp, method: .get, type: String.self) { _ in
+      
+    }
+  }
+
   /// This function help us to generate a URLRequest
   /// - Parameters:
   ///   - route: the path
   ///   - method: type of request to be made
   ///   - parameters: whatever extra information you need to pass to the backend
   /// - Returns: URLRequest
-   func createRequest(route: Route, 
+   private func createRequest(route: Route,
                              method: Method,
                              parameters: [String: Any]? = nil) -> URLRequest? {
 
@@ -37,5 +47,30 @@ struct NetworkService {
       }
     }
     return urlRequest
+  }
+
+  private func request<T: Codable>(route: Route,
+                                   method: Method,
+                                   parameters: [String: Any]? = nil,
+                                   type: T.Type,
+                                   completion: @escaping (Result<T?, Error>) -> Void) {
+    guard let request = createRequest(route: route, method: method, parameters: parameters) else {
+      completion(.failure(AppError.unknownError))
+      return
+    }
+    URLSession.shared.dataTask(with: request) { data, response, error in
+      var result: Result<Data, Error>?
+      if let data = data {
+        result = .success(data)
+        let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify our data"
+        print("The response is: \(responseString)")
+      }else if let error = error {
+        result = .failure(error)
+        print("The error is: \(error.localizedDescription)")
+      }
+      DispatchQueue.main.async {
+        // TODO Hecode our result and send back to the user
+      }
+    }.resume()
   }
 }

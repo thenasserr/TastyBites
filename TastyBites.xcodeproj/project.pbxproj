@@ -38,6 +38,7 @@
 		D68C70962B347B95005C80F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70952B347B95005C80F6 /* NetworkService.swift */; };
 		D68C70982B347C19005C80F6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70972B347C19005C80F6 /* Route.swift */; };
 		D68C709A2B348191005C80F6 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70992B348191005C80F6 /* Method.swift */; };
+		D68C709C2B34898A005C80F6 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C709B2B34898A005C80F6 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		D68C70952B347B95005C80F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D68C70972B347C19005C80F6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		D68C70992B348191005C80F6 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		D68C709B2B34898A005C80F6 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		F7E52CE5916BF14B0A6A5A65 /* Pods-TastyBites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyBites.release.xcconfig"; path = "Target Support Files/Pods-TastyBites/Pods-TastyBites.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,6 +296,7 @@
 				D68C70952B347B95005C80F6 /* NetworkService.swift */,
 				D68C70972B347C19005C80F6 /* Route.swift */,
 				D68C70992B348191005C80F6 /* Method.swift */,
+				D68C709B2B34898A005C80F6 /* AppError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				D68C70732B337F7B005C80F6 /* CardView.swift in Sources */,
 				D68C70632B336D68005C80F6 /* OnboardingCollectionViewCell.swift in Sources */,
 				D68C708E2B3471E4005C80F6 /* ListDishesViewController.swift in Sources */,
+				D68C709C2B34898A005C80F6 /* AppError.swift in Sources */,
 				D68C707B2B3383E7005C80F6 /* Dish.swift in Sources */,
 				D68C70852B33A2D9005C80F6 /* UIViewController+Ext.swift in Sources */,
 				D68C70772B3381FF005C80F6 /* DishPortraitCollectionViewCell.swift in Sources */,

@@ -31,9 +31,7 @@ class OnboardingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 
-    let service = NetworkService()
-    let request = service.createRequest(route: .temp, method: .get, parameters: ["firstName": "Emmanuel", "lastName": "Okwara"])
-    print("The URL is : \(request?.url)")
+    NetworkService.shared.myRequest()
     slides = [
       .init(title: "Delicious Dishes", description: "Experience a variety of amazing dishes from different cultures around the world.", image: UIImage(named: "slide1")!),
       .init(title: "World-Class Chefs", description: "Our dishes are prepared by only the best.", image: UIImage(named: "slide2")!),
