@@ -17,6 +17,13 @@ struct NetworkService {
       request(route: .fetchAllCategories, method: .get, completion: completion)
   }
 
+  func placeOrder (dishId: String, name: String, completion: @escaping (Result<Order, Error>) -> Void) {
+    let params = [
+      "name": name
+    ]
+    request(route: .placeOrder(dishId), method: .post, parameters: params, completion: completion)
+  }
+
   /// This function help us to generate a URLRequest
   /// - Parameters:
   ///   - route: the path
