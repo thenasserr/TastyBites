@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -14,32 +15,33 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var popularColletionView: UICollectionView!
   @IBOutlet weak var specialsCollectionView: UICollectionView!
   //MARK: - Vars
-  var categories: [DishCategory] = [
-    .init(id: "id1", name: "Africa Dish1", image: "https://picsum.photos/200/300"),
-    .init(id: "id1", name: "Africa Dish2", image: "https://picsum.photos/200/300"),
-    .init(id: "id1", name: "Africa Dish3", image: "https://picsum.photos/200/300"),
-    .init(id: "id1", name: "Africa Dish4", image: "https://picsum.photos/200/300"),
-    .init(id: "id1", name: "Africa Dish5", image: "https://picsum.photos/200/300")
-  ]
+  var categories: [DishCategory] = []
+  var populars: [Dish] = []
+  var specials: [Dish] = []
 
-  var populars: [Dish] = [
-    .init(id: "id", name: "Garri", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 123),
-    .init(id: "id", name: "Indomi", description: "This is The Best Dish I have Ever taste This is The Best Dish I have Ever taste This is The Best Dish I have Ever taste This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 500),
-    .init(id: "id", name: "Pizza", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 333),
-    .init(id: "id", name: "Pizza", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 333),
-    .init(id: "id", name: "Pizza", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 333)
-  ]
-
-  var specials: [Dish] = [
-    .init(id: "id", name: "Fried Plantain", description: "This is My Favourite Dish", image: "https://picsum.photos/200/300", calories: 123),
-    .init(id: "id", name: "Beans and Garri", description: "This is My Favourite Dish", image: "https://picsum.photos/200/300", calories: 123)
-  ]
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
+
     registerCells()
+    ProgressHUD.show()
+
+    NetworkService.shared.fetchAllCategories { [weak self] (result) in
+      switch result {
+      case .success(let allDishes):
+        ProgressHUD.dismiss()
+        self?.categories = allDishes.categories ?? []
+        self?.populars = allDishes.populars ?? []
+        self?.specials = allDishes.specials ?? []
+        self?.categoryCollectionView.reloadData()
+        self?.popularColletionView.reloadData()
+        self?.specialsCollectionView.reloadData()
+      case .failure(let error):
+        ProgressHUD.showError(error.localizedDescription)
+      }
     }
+  }
 
   //MARK: - Register CollectionView Cell
   private func registerCells() {
@@ -84,7 +86,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
       return UICollectionViewCell()
     }
   }
-
+  
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if collectionView == categoryCollectionView {
 

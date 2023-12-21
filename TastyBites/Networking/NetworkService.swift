@@ -13,8 +13,8 @@ struct NetworkService {
 
   private init() {}
 
-  func myRequest(completion: @escaping (Result<[Dish], Error>) -> Void) {
-    request(route: .temp, method: .get, completion: completion)
+  func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
+      request(route: .fetchAllCategories, method: .get, completion: completion)
   }
 
   /// This function help us to generate a URLRequest
@@ -27,7 +27,7 @@ struct NetworkService {
                              method: Method,
                              parameters: [String: Any]? = nil) -> URLRequest? {
 
-    let urlString = Route.baseURL + route.description
+    let urlString = Route.baseUrl + route.description
     guard let url = urlString.asURL else { return nil }
     var urlRequest = URLRequest(url: url)
     urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -53,7 +53,7 @@ struct NetworkService {
   ///   - method: type of request to be made
   ///   - parameters: whatever extra information you need to pass to the backend
   ///   - type: The Model
-  private func request<T: Codable>(route: Route,
+  private func request<T: Decodable>(route: Route,
                                    method: Method,
                                    parameters: [String: Any]? = nil,
                                    completion: @escaping (Result<T, Error>) -> Void) {

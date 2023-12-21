@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Dish: Codable {
+struct Dish: Decodable {
   let id: String?
   let name: String?
   let description: String?

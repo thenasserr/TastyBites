@@ -30,18 +30,6 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
-    NetworkService.shared.myRequest { result in
-      switch result {
-
-      case .success(let data):
-        for dish in data {
-          print(dish.name ?? "")
-        }
-      case .failure(let error):
-        print("error is : \(error.localizedDescription)")
-      }
-    }
     slides = [
       .init(title: "Delicious Dishes", description: "Experience a variety of amazing dishes from different cultures around the world.", image: UIImage(named: "slide1")!),
       .init(title: "World-Class Chefs", description: "Our dishes are prepared by only the best.", image: UIImage(named: "slide2")!),

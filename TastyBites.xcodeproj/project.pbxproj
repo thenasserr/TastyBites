@@ -40,6 +40,7 @@
 		D68C709A2B348191005C80F6 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70992B348191005C80F6 /* Method.swift */; };
 		D68C709C2B34898A005C80F6 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C709B2B34898A005C80F6 /* AppError.swift */; };
 		D68C709E2B34925A005C80F6 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C709D2B34925A005C80F6 /* APIResponse.swift */; };
+		D68C70A02B349CE9005C80F6 /* AllDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C709F2B349CE9005C80F6 /* AllDishes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		D68C70992B348191005C80F6 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		D68C709B2B34898A005C80F6 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D68C709D2B34925A005C80F6 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		D68C709F2B349CE9005C80F6 /* AllDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishes.swift; sourceTree = "<group>"; };
 		F7E52CE5916BF14B0A6A5A65 /* Pods-TastyBites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyBites.release.xcconfig"; path = "Target Support Files/Pods-TastyBites/Pods-TastyBites.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				D68C706D2B337BEC005C80F6 /* DishCategory.swift */,
 				D68C707A2B3383E7005C80F6 /* Dish.swift */,
 				D68C70922B347767005C80F6 /* Order.swift */,
+				D68C709F2B349CE9005C80F6 /* AllDishes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				D68C705F2B336A5E005C80F6 /* UIView+Ext.swift in Sources */,
 				D68C70442B336276005C80F6 /* AppDelegate.swift in Sources */,
 				D68C70612B336B2E005C80F6 /* OnboardingSlides.swift in Sources */,
+				D68C70A02B349CE9005C80F6 /* AllDishes.swift in Sources */,
 				D68C70462B336276005C80F6 /* SceneDelegate.swift in Sources */,
 				D68C709A2B348191005C80F6 /* Method.swift in Sources */,
 				D68C705C2B336667005C80F6 /* OnboardingViewController.swift in Sources */,
