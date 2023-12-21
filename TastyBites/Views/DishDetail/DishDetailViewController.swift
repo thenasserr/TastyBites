@@ -25,7 +25,7 @@ class DishDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     populateView()
     }
-
+//MARK: - To Pobulate Data in DetailViewController
   private func populateView() {
     dishImageView.kf.setImage(with: dish.image?.asURL)
     titleLabel.text = dish.name

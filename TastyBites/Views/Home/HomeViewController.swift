@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
     registerCells()
     }
 
+  //MARK: - Register CollectionView Cell
   private func registerCells() {
     categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
 
@@ -50,6 +51,7 @@ class HomeViewController: UIViewController {
   }
 }
 
+//MARK: - CollectionView Delegate and DataSource
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     switch collectionView {
@@ -63,6 +65,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
       return 0
     }
   }
+
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     switch collectionView {
     case categoryCollectionView:
@@ -84,6 +87,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if collectionView == categoryCollectionView {
+
+      let controller = ListDishesViewController.instantiate()
+      controller.category = categories[indexPath.row]
+      navigationController?.pushViewController(controller, animated: true)
 
     } else {
       let controller = DishDetailViewController.instantiate()

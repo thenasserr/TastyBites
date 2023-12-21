@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3jQ-ib-Xd6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -412,6 +412,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIS-P3-LJU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2890.8396946564885" y="3.5211267605633805"/>
+        </scene>
+        <!--List Dishes View Controller-->
+        <scene sceneID="w0g-Ji-Veh">
+            <objects>
+                <viewController storyboardIdentifier="ListDishesViewController" id="3IX-7z-JfP" customClass="ListDishesViewController" customModule="TastyBites" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jkO-s3-ips">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eAO-Lb-OYf">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3IX-7z-JfP" id="hxH-bU-jTp"/>
+                                    <outlet property="delegate" destination="3IX-7z-JfP" id="bHp-f4-GkH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qIU-gu-riD"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eAO-Lb-OYf" secondAttribute="bottom" id="Fcg-yk-dUl"/>
+                            <constraint firstItem="eAO-Lb-OYf" firstAttribute="top" secondItem="qIU-gu-riD" secondAttribute="top" id="IWM-G8-JRu"/>
+                            <constraint firstItem="eAO-Lb-OYf" firstAttribute="leading" secondItem="qIU-gu-riD" secondAttribute="leading" id="bfa-gt-yCM"/>
+                            <constraint firstItem="eAO-Lb-OYf" firstAttribute="trailing" secondItem="qIU-gu-riD" secondAttribute="trailing" id="dbv-9v-1ea"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="eAO-Lb-OYf" id="7B0-I5-zOU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gt5-ed-7tm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3846.5648854961833" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tm5-Xd-Eg2">
