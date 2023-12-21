@@ -35,6 +35,9 @@
 		D68C708E2B3471E4005C80F6 /* ListDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C708D2B3471E4005C80F6 /* ListDishesViewController.swift */; };
 		D68C70912B34761D005C80F6 /* ListOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70902B34761D005C80F6 /* ListOrdersViewController.swift */; };
 		D68C70932B347767005C80F6 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70922B347767005C80F6 /* Order.swift */; };
+		D68C70962B347B95005C80F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70952B347B95005C80F6 /* NetworkService.swift */; };
+		D68C70982B347C19005C80F6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70972B347C19005C80F6 /* Route.swift */; };
+		D68C709A2B348191005C80F6 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70992B348191005C80F6 /* Method.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,9 @@
 		D68C708D2B3471E4005C80F6 /* ListDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishesViewController.swift; sourceTree = "<group>"; };
 		D68C70902B34761D005C80F6 /* ListOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrdersViewController.swift; sourceTree = "<group>"; };
 		D68C70922B347767005C80F6 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		D68C70952B347B95005C80F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D68C70972B347C19005C80F6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		D68C70992B348191005C80F6 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		F7E52CE5916BF14B0A6A5A65 /* Pods-TastyBites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyBites.release.xcconfig"; path = "Target Support Files/Pods-TastyBites/Pods-TastyBites.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,7 @@
 		D68C70422B336276005C80F6 /* TastyBites */ = {
 			isa = PBXGroup;
 			children = (
+				D68C70942B347B77005C80F6 /* Networking */,
 				D68C70642B337701005C80F6 /* Resources */,
 				D68C705D2B336A39005C80F6 /* Extensions */,
 				D68C70592B336641005C80F6 /* CustomViews */,
@@ -281,6 +288,16 @@
 			path = ListOrders;
 			sourceTree = "<group>";
 		};
+		D68C70942B347B77005C80F6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D68C70952B347B95005C80F6 /* NetworkService.swift */,
+				D68C70972B347C19005C80F6 /* Route.swift */,
+				D68C70992B348191005C80F6 /* Method.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		E01513ECD1531F1E5DF2C3BE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,11 +434,14 @@
 				D68C70442B336276005C80F6 /* AppDelegate.swift in Sources */,
 				D68C70612B336B2E005C80F6 /* OnboardingSlides.swift in Sources */,
 				D68C70462B336276005C80F6 /* SceneDelegate.swift in Sources */,
+				D68C709A2B348191005C80F6 /* Method.swift in Sources */,
 				D68C705C2B336667005C80F6 /* OnboardingViewController.swift in Sources */,
 				D68C70832B33A100005C80F6 /* DishDetailViewController.swift in Sources */,
 				D68C70672B337830005C80F6 /* HomeViewController.swift in Sources */,
 				D68C706E2B337BEC005C80F6 /* DishCategory.swift in Sources */,
 				D68C707F2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift in Sources */,
+				D68C70982B347C19005C80F6 /* Route.swift in Sources */,
+				D68C70962B347B95005C80F6 /* NetworkService.swift in Sources */,
 				D68C70702B337CC8005C80F6 /* String+Ext.swift in Sources */,
 				D68C70732B337F7B005C80F6 /* CardView.swift in Sources */,
 				D68C70632B336D68005C80F6 /* OnboardingCollectionViewCell.swift in Sources */,
