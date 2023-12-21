@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListOrdersViewController: UIViewController {
 
@@ -13,19 +14,31 @@ class ListOrdersViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
 
   //MARK: - Vars
-  var orders: [Order] = [
-    .init(id: "id1", name: "Ibrahim Nasser", dish: .init(id: "id1", name: "Garri", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 566)),
-    .init(id: "id1", name: "Hager Nasser", dish: .init(id: "id1", name: "Indomi", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 344)),
-    .init(id: "id1", name: "Ahmed Ali", dish: .init(id: "id1", name: "Pizza", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 500)),
-    .init(id: "id1", name: "Nada Nasser", dish: .init(id: "id1", name: "Spaguti", description: "This is The Best Dish I have Ever taste", image: "https://picsum.photos/200/300", calories: 700))
-  ]
+  var orders: [Order] = []
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     title = "Orders"
     registerCells()
+    ProgressHUD.show()
+
+
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    NetworkService.shared.fetchOrders { [weak self] (result) in
+      switch result {
+      case .success(let orders):
+        ProgressHUD.dismiss()
+
+        self?.orders = orders
+        self?.tableView.reloadData()
+      case .failure(let error):
+        ProgressHUD.showError(error.localizedDescription)
+      }
     }
+  }
 
   //MARK: - Register TableView Cells
   private func registerCells() {
