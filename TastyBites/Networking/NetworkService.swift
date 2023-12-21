@@ -13,10 +13,8 @@ struct NetworkService {
 
   private init() {}
 
-  func myRequest() {
-    request(route: .temp, method: .get, type: String.self) { _ in
-      
-    }
+  func myRequest(completion: @escaping (Result<[Dish], Error>) -> Void) {
+    request(route: .temp, method: .get, completion: completion)
   }
 
   /// This function help us to generate a URLRequest
@@ -48,12 +46,17 @@ struct NetworkService {
     }
     return urlRequest
   }
-
+  
+  /// This function help us to Make a URLRequest
+  /// - Parameters:
+  ///   - route: the path
+  ///   - method: type of request to be made
+  ///   - parameters: whatever extra information you need to pass to the backend
+  ///   - type: The Model
   private func request<T: Codable>(route: Route,
                                    method: Method,
                                    parameters: [String: Any]? = nil,
-                                   type: T.Type,
-                                   completion: @escaping (Result<T?, Error>) -> Void) {
+                                   completion: @escaping (Result<T, Error>) -> Void) {
     guard let request = createRequest(route: route, method: method, parameters: parameters) else {
       completion(.failure(AppError.unknownError))
       return
@@ -63,14 +66,44 @@ struct NetworkService {
       if let data = data {
         result = .success(data)
         let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify our data"
-        print("The response is: \(responseString)")
+//        print("The response is: \(responseString)")
       }else if let error = error {
         result = .failure(error)
         print("The error is: \(error.localizedDescription)")
       }
       DispatchQueue.main.async {
         // TODO Hecode our result and send back to the user
+        handleResponse(result: result, completion: completion)
       }
     }.resume()
+  }
+
+  private func handleResponse<T: Decodable> (result: Result<Data, Error>?, 
+                                             completion: @escaping (Result<T, Error>) -> Void) {
+    
+    guard let result = result else {
+      completion(.failure(AppError.unknownError))
+      return
+    }
+    switch result {
+
+    case .success(let data):
+      let decoder = JSONDecoder()
+      guard let response = try? decoder.decode(APIResponse<T>.self, from: data) else {
+        completion(.failure(AppError.errorDecoding))
+        return
+      }
+      if let error = response.error {
+        completion(.failure(AppError.serverError(error)))
+        return
+      }
+      if let decodedData = response.data {
+        completion(.success(decodedData))
+      } else {
+        completion(.failure(AppError.unknownError))
+      }
+    case .failure(let error):
+      completion(.failure(error))
+    }
   }
 }
