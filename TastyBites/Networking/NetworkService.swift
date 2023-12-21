@@ -24,6 +24,10 @@ struct NetworkService {
     request(route: .placeOrder(dishId), method: .post, parameters: params, completion: completion)
   }
 
+  func fetchCategoryDishes(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
+      request(route: .fetchCategoryDishes(categoryId), method: .get, completion: completion)
+  }
+
   /// This function help us to generate a URLRequest
   /// - Parameters:
   ///   - route: the path
