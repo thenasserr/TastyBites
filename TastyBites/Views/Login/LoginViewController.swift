@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -19,8 +20,38 @@ class LoginViewController: UIViewController {
     
     }
 
+  //MARK: - Login User
   @IBAction func loginButtonPressed(_ sender: Any) {
+    guard let email = emailTextField.text,
+          let password = passwordTextField.text else {
+      return
+    }
+    if isDataInputedFor() {
+      FirebaseUserListener.shared.loginUser(email: email, password: password) { [weak self] error, isEmailVerified in
+        if error == nil {
+          if isEmailVerified {
+            let controller = self?.storyboard?.instantiateViewController(withIdentifier: "HomeNavigationC") as! UINavigationController
+                  controller.modalPresentationStyle = .fullScreen
+                  controller.modalTransitionStyle = .flipHorizontal
+            self?.present(controller, animated: true, completion: nil)
+          } else {
+            ProgressHUD.showError("Please check your email and verify your registration")
+          }
+        } else {
+          ProgressHUD.showError(error?.localizedDescription)
+        }
+      }
+    } else {
+      ProgressHUD.showError("All Fields Is Required")
+    }
+
   }
+
+  //MARK: - Check Validation
+  private func isDataInputedFor() -> Bool {
+    return passwordTextField.text != "" && emailTextField.text != ""
+  }
+
   
   @IBAction func signupButtonPressed(_ sender: Any) {
     let controller = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
