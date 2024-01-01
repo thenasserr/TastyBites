@@ -9,21 +9,24 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+  @IBOutlet weak var tabelView: UITableView!
   @IBOutlet weak var userImage: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
-  @IBOutlet weak var emailLabel: UILabel!
+  var titles: [String] = ["My Orders", "Wish List"]
   override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    userImage.image = UIImage(named: "ava")?.circleMasked
+    self.tabBarController?.tabBar.isHidden = false
 
     }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    self.tabBarController?.tabBar.isHidden = false
     showUserInfo()
   }
+
 
 
   @IBAction func signoutPressed(_ sender: Any) {
@@ -49,14 +52,17 @@ class ProfileViewController: UIViewController {
   private func showUserInfo() {
     if let user = User.currentUser {
       nameLabel.text = user.name
-      emailLabel.text = user.email
 
-      //      if user.avataLink != nil {
-      //TODO:- Download Image
-      //        FileStroage.downloadImage(imageURL: user.avataLink) { avatarImage in
-      //          self.avatarImageView.image = avatarImage?.circleMasked
     }
 
   }
 
+  
+  @IBAction func settingsPressed(_ sender: Any) {
+    let controller = SettingsViewController.instantiate()
+    navigationController?.pushViewController(controller, animated: true)
+  }
+  
 }
+
+

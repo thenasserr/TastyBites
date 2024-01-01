@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAddressViewController" customModule="TastyBites" customModuleProvider="target">
+            <connections>
+                <outlet property="cityTextField" destination="9cP-MJ-1aN" id="fzA-oS-lbj"/>
+                <outlet property="nameTextField" destination="sBg-GJ-JYk" id="dY6-Sk-GG6"/>
+                <outlet property="phoneTextField" destination="xmX-0t-2iN" id="t5h-Fp-mhk"/>
+                <outlet property="streetTextField" destination="q4H-KN-zi5" id="nus-0r-xTj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-3I-I5u">
+                    <rect key="frame" x="16" y="159" width="361" height="290"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBg-GJ-JYk">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="wlt-JM-Nxb"/>
+                            </constraints>
+                            <color key="textColor" red="0.1058823466" green="0.270588249" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cP-MJ-1aN">
+                            <rect key="frame" x="0.0" y="80" width="361" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="h1b-ad-iar"/>
+                            </constraints>
+                            <color key="textColor" red="0.1058823466" green="0.270588249" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q4H-KN-zi5">
+                            <rect key="frame" x="0.0" y="160" width="361" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="akN-4T-5S1"/>
+                            </constraints>
+                            <color key="textColor" red="0.1058823466" green="0.270588249" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xmX-0t-2iN">
+                            <rect key="frame" x="0.0" y="240" width="361" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="jcN-wE-H3X"/>
+                            </constraints>
+                            <color key="textColor" red="0.1058823466" green="0.270588249" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFr-sg-sxa">
+                    <rect key="frame" x="16" y="499" width="361" height="50"/>
+                    <color key="backgroundColor" red="0.1058823466" green="0.270588249" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="FqR-41-S8Z"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Add Address"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addAddressPressed:" destination="-1" eventType="touchUpInside" id="A66-i4-cn3"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65Y-wC-lRi">
+                    <rect key="frame" x="16" y="89" width="361" height="20"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="26"/>
+                    <color key="textColor" red="0.1058823466" green="0.270588249" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gFr-sg-sxa" firstAttribute="top" secondItem="kdV-3I-I5u" secondAttribute="bottom" constant="50" id="9V4-KZ-ZMO"/>
+                <constraint firstItem="65Y-wC-lRi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="I9l-zy-wh8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="65Y-wC-lRi" secondAttribute="trailing" constant="16" id="NCh-wU-QL6"/>
+                <constraint firstItem="kdV-3I-I5u" firstAttribute="top" secondItem="65Y-wC-lRi" secondAttribute="bottom" constant="50" id="XMg-1g-cQB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gFr-sg-sxa" secondAttribute="trailing" constant="16" id="aCe-sP-dcN"/>
+                <constraint firstItem="65Y-wC-lRi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="clC-5e-4fE"/>
+                <constraint firstItem="gFr-sg-sxa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="kqJ-g0-FVN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kdV-3I-I5u" secondAttribute="trailing" constant="16" id="mxe-Cj-Hav"/>
+                <constraint firstItem="kdV-3I-I5u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mxl-MX-VT1"/>
+                <constraint firstItem="kdV-3I-I5u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="vMf-CQ-ugc"/>
+            </constraints>
+            <point key="canvasLocation" x="35.877862595419849" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
