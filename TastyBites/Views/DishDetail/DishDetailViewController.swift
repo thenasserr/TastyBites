@@ -41,6 +41,18 @@ class DishDetailViewController: UIViewController {
       return
     }
     ProgressHUD.show("Placing Order...")
+
+//    OrderAPI.shared.placeOrder(dishId: dish.id ?? "", name: name) { result in
+//      switch result {
+//      case .success(_):
+//        ProgressHUD.showSuccess("Your order has been recevied. 👨‍🍳")
+//      case .failure(let error):
+//        ProgressHUD.showError(error.localizedDescription)
+//      }
+//    }
+
+
+
     NetworkService.shared.placeOrder(dishId: dish.id ?? "", name: name) { result in
       switch result {
 

@@ -27,20 +27,41 @@ class HomeViewController: UIViewController {
     registerCells()
     ProgressHUD.show()
 
-    NetworkService.shared.fetchAllCategories { [weak self] (result) in
+
+
+
+    CategoriesAPI.shared.getGategories { [weak self] result in
       switch result {
       case .success(let allDishes):
         ProgressHUD.dismiss()
-        self?.categories = allDishes.categories ?? []
-        self?.populars = allDishes.populars ?? []
-        self?.specials = allDishes.specials ?? []
+//        print(allDishes)
+        self?.categories = allDishes.data?.categories ?? []
+        self?.populars = allDishes.data?.populars ?? []
+        self?.specials = allDishes.data?.specials ?? []
         self?.categoryCollectionView.reloadData()
         self?.popularColletionView.reloadData()
         self?.specialsCollectionView.reloadData()
       case .failure(let error):
+        print(error.localizedDescription)
         ProgressHUD.showError(error.localizedDescription)
       }
     }
+
+//    NetworkService.shared.fetchAllCategories { [weak self] (result) in
+//      switch result {
+//      case .success(let allDishes):
+//        ProgressHUD.dismiss()
+////        print(allDishes)
+//        self?.categories = allDishes.categories ?? []
+//        self?.populars = allDishes.populars ?? []
+//        self?.specials = allDishes.specials ?? []
+//        self?.categoryCollectionView.reloadData()
+//        self?.popularColletionView.reloadData()
+//        self?.specialsCollectionView.reloadData()
+//      case .failure(let error):
+//        ProgressHUD.showError(error.localizedDescription)
+//      }
+//    }
   }
 
   //MARK: - Register CollectionView Cell
@@ -93,12 +114,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
       let controller = ListDishesViewController.instantiate()
       controller.category = categories[indexPath.row]
       navigationController?.pushViewController(controller, animated: true)
+//      controller.modalPresentationStyle = .fullScreen
+//      present(controller, animated: true)
 
     } else {
       let controller = DishDetailViewController.instantiate()
       controller.dish = collectionView == popularColletionView ? populars[indexPath.row] : specials[indexPath.row]
       navigationController?.pushViewController(controller, animated: true)
+
     }
   }
 }
+
+
+
+
 

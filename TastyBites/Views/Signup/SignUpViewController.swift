@@ -28,7 +28,7 @@ class SignUpViewController: UIViewController {
       return
     }
     if isDataInputedFor() {
-      FirebaseUserListener.shared.registerNewUser(email: email, password: password) { error in
+      FirebaseUserListener.shared.registerNewUser(email: email, password: password, name: name) { error in
         if error == nil {
           ProgressHUD.showSuccess("Email Verification Sent, Please Verifiy Your Email")
         } else {

@@ -29,7 +29,7 @@ struct FirebaseUserListener {
 
   //MARK: - Register User
 
-  func registerNewUser(email: String, password: String, completion: @escaping (_ error: Error?) -> Void) {
+  func registerNewUser(email: String, password: String, name: String, completion: @escaping (_ error: Error?) -> Void) {
     Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
       completion(error)
       if error == nil {
@@ -38,11 +38,26 @@ struct FirebaseUserListener {
         }
       }
       if authResult?.user != nil {
-        let user = User(id: (authResult?.user.uid)!, name: email, email: email, personalIamge: "")
+        let user = User(id: (authResult?.user.uid)!, name: name, email: email, personalIamge: "")
         saveUserToFirestore(user)
         saveUserLocally(user)
       }
     }
+  }
+
+  //MARK: - Log Out User
+
+  func logOutUser(completion: @escaping (_ error: Error?) -> Void) {
+
+    do {
+      try Auth.auth().signOut()
+      userDefaults.removeObject(forKey: CurrentUser)
+      userDefaults.synchronize()
+      completion(nil)
+    } catch let error as NSError {
+      completion(error)
+    }
+
   }
 
   //MARK: - Save User To Firestore
@@ -78,6 +93,24 @@ struct FirebaseUserListener {
         print(error!.localizedDescription)
       }
 
+    }
+  }
+
+  //MARK: - Resend verification link
+
+  func resendVerificationEmail(email: String, completion: @escaping (_ error: Error?) -> Void) {
+    Auth.auth().currentUser?.reload(completion: { error in
+      Auth.auth().currentUser?.sendEmailVerification(completion: { error in
+        completion(error)
+      })
+    })
+  }
+
+  //MARK: - Reset Passowrd
+
+  func resetPassword(email: String, completion: @escaping (_ error: Error?) -> Void) {
+    Auth.auth().sendPasswordReset(withEmail: email) { error in
+      completion(error)
     }
   }
 }

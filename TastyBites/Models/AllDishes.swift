@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct AllDishes: Decodable {
+struct AllDishes: Codable {
     let categories: [DishCategory]?
     let populars: [Dish]?
     let specials: [Dish]?
 }
+
+
+
+
+

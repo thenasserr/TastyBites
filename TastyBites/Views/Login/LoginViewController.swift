@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
       FirebaseUserListener.shared.loginUser(email: email, password: password) { [weak self] error, isEmailVerified in
         if error == nil {
           if isEmailVerified {
-            let controller = self?.storyboard?.instantiateViewController(withIdentifier: "HomeNavigationC") as! UINavigationController
+            let controller = self?.storyboard?.instantiateViewController(withIdentifier: "HomeNavigationC") as! UITabBarController
                   controller.modalPresentationStyle = .fullScreen
                   controller.modalTransitionStyle = .flipHorizontal
             self?.present(controller, animated: true, completion: nil)

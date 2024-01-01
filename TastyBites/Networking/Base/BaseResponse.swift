@@ -7,12 +7,16 @@
 import Foundation
 
 
-class BaseResponse<T: Codable>: Codable {
-    var status: String?
+struct BaseResponse<T: Codable>: Codable {
+    var status: Int?
+    let message: String?
     var data: T?
+
+
 
     enum Codingkeys: String, CodingKey {
         case status = "status"
         case data = "data"
+        case message = "message"
     }
 }

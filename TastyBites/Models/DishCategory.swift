@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DishCategory: Decodable {
+struct DishCategory: Codable {
     let id, name, image: String?
 
     enum CodingKeys: String, CodingKey {

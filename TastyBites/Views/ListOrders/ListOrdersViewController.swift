@@ -27,17 +27,34 @@ class ListOrdersViewController: UIViewController {
   }
 
   override func viewDidAppear(_ animated: Bool) {
-    NetworkService.shared.fetchOrders { [weak self] (result) in
+
+    OrderAPI.shared.fetchOrders { [weak self] result in
       switch result {
+
       case .success(let orders):
         ProgressHUD.dismiss()
-
-        self?.orders = orders
+        let data = orders.data
+        print(data)
+        self?.orders = data ?? []
         self?.tableView.reloadData()
       case .failure(let error):
         ProgressHUD.showError(error.localizedDescription)
       }
     }
+
+
+//    NetworkService.shared.fetchOrders { [weak self] (result) in
+//      switch result {
+//      case .success(let orders):
+//        ProgressHUD.dismiss()
+//        print(orders)
+//        self?.orders = orders
+//
+//        self?.tableView.reloadData()
+//      case .failure(let error):
+//        ProgressHUD.showError(error.localizedDescription)
+//      }
+//    }
   }
 
   //MARK: - Register TableView Cells
@@ -59,6 +76,7 @@ extension ListOrdersViewController: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print(indexPath.row)
     let controller = DishDetailViewController.instantiate()
     controller.dish = orders[indexPath.row].dish
     navigationController?.pushViewController(controller, animated: true)

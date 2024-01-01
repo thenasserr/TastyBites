@@ -80,6 +80,16 @@
 		D68C70A02B349CE9005C80F6 /* AllDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C709F2B349CE9005C80F6 /* AllDishes.swift */; };
 		D68C70A32B34EEE3005C80F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68C70A22B34EEE3005C80F6 /* LoginViewController.swift */; };
 		D698AFB62B3EF9EF0014D837 /* FirebaseCollectionRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698AFB52B3EF9EF0014D837 /* FirebaseCollectionRef.swift */; };
+		D698AFBB2B3F2B940014D837 /* PrfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698AFBA2B3F2B940014D837 /* PrfileTableViewController.swift */; };
+		D698AFBE2B3F3BCD0014D837 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698AFBD2B3F3BCD0014D837 /* AboutViewController.swift */; };
+		D698AFC02B41B2770014D837 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698AFBF2B41B2770014D837 /* ProfileViewController.swift */; };
+		D698AFE22B41CD340014D837 /* CategoriesNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698AFE12B41CD340014D837 /* CategoriesNetworking.swift */; };
+		D698AFEB2B41E77A0014D837 /* CategoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698AFEA2B41E77A0014D837 /* CategoriesAPI.swift */; };
+		D698AFEE2B41E8670014D837 /* LishDishesNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698AFED2B41E8670014D837 /* LishDishesNetworking.swift */; };
+		D698AFF02B41E9530014D837 /* ListDishesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698AFEF2B41E9530014D837 /* ListDishesAPI.swift */; };
+		D698AFF22B42152D0014D837 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698AFF12B42152D0014D837 /* UIImage+Ext.swift */; };
+		D6B55D522B42F5CA00E241B2 /* OrderNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B55D512B42F5CA00E241B2 /* OrderNetworking.swift */; };
+		D6B55D542B42FF8D00E241B2 /* OrderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B55D532B42FF8D00E241B2 /* OrderAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +142,16 @@
 		D68C709F2B349CE9005C80F6 /* AllDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishes.swift; sourceTree = "<group>"; };
 		D68C70A22B34EEE3005C80F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D698AFB52B3EF9EF0014D837 /* FirebaseCollectionRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionRef.swift; sourceTree = "<group>"; };
+		D698AFBA2B3F2B940014D837 /* PrfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrfileTableViewController.swift; sourceTree = "<group>"; };
+		D698AFBD2B3F3BCD0014D837 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D698AFBF2B41B2770014D837 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D698AFE12B41CD340014D837 /* CategoriesNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesNetworking.swift; sourceTree = "<group>"; };
+		D698AFEA2B41E77A0014D837 /* CategoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesAPI.swift; sourceTree = "<group>"; };
+		D698AFED2B41E8670014D837 /* LishDishesNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LishDishesNetworking.swift; sourceTree = "<group>"; };
+		D698AFEF2B41E9530014D837 /* ListDishesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishesAPI.swift; sourceTree = "<group>"; };
+		D698AFF12B42152D0014D837 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		D6B55D512B42F5CA00E241B2 /* OrderNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNetworking.swift; sourceTree = "<group>"; };
+		D6B55D532B42FF8D00E241B2 /* OrderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAPI.swift; sourceTree = "<group>"; };
 		F7E52CE5916BF14B0A6A5A65 /* Pods-TastyBites.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TastyBites.release.xcconfig"; path = "Target Support Files/Pods-TastyBites/Pods-TastyBites.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -285,6 +305,8 @@
 		D68C70582B33663C005C80F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D698AFBC2B3F3BB90014D837 /* About */,
+				D698AFB72B3F17070014D837 /* Profile */,
 				D670C1D22B3DBCD1008E4514 /* Signup */,
 				D670C1CD2B3DAF39008E4514 /* GettingStarted */,
 				D68C70A12B34EED0005C80F6 /* Login */,
@@ -323,6 +345,7 @@
 				D68C706F2B337CC8005C80F6 /* String+Ext.swift */,
 				D68C70842B33A2D9005C80F6 /* UIViewController+Ext.swift */,
 				D670C1D02B3DB952008E4514 /* UIButton+Ext.swift */,
+				D698AFF12B42152D0014D837 /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -434,6 +457,9 @@
 		D68C70942B347B77005C80F6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				D6B55D502B42F5A500E241B2 /* OrderNetworking */,
+				D698AFEC2B41E8480014D837 /* LishDishesNetworking */,
+				D698AFE92B41E7460014D837 /* CategoriesNetworking */,
 				D670C2182B3DCA8E008E4514 /* Models */,
 				D670C1D52B3DC287008E4514 /* Base */,
 				D68C70952B347B95005C80F6 /* NetworkService.swift */,
@@ -451,6 +477,50 @@
 				D68C70A22B34EEE3005C80F6 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		D698AFB72B3F17070014D837 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D698AFBA2B3F2B940014D837 /* PrfileTableViewController.swift */,
+				D698AFBF2B41B2770014D837 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D698AFBC2B3F3BB90014D837 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				D698AFBD2B3F3BCD0014D837 /* AboutViewController.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		D698AFE92B41E7460014D837 /* CategoriesNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D698AFE12B41CD340014D837 /* CategoriesNetworking.swift */,
+				D698AFEA2B41E77A0014D837 /* CategoriesAPI.swift */,
+			);
+			path = CategoriesNetworking;
+			sourceTree = "<group>";
+		};
+		D698AFEC2B41E8480014D837 /* LishDishesNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D698AFED2B41E8670014D837 /* LishDishesNetworking.swift */,
+				D698AFEF2B41E9530014D837 /* ListDishesAPI.swift */,
+			);
+			path = LishDishesNetworking;
+			sourceTree = "<group>";
+		};
+		D6B55D502B42F5A500E241B2 /* OrderNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D6B55D512B42F5CA00E241B2 /* OrderNetworking.swift */,
+				D6B55D532B42FF8D00E241B2 /* OrderAPI.swift */,
+			);
+			name = OrderNetworking;
 			sourceTree = "<group>";
 		};
 		E01513ECD1531F1E5DF2C3BE /* Pods */ = {
@@ -614,7 +684,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D698AFE22B41CD340014D837 /* CategoriesNetworking.swift in Sources */,
 				D68C70A32B34EEE3005C80F6 /* LoginViewController.swift in Sources */,
+				D6B55D542B42FF8D00E241B2 /* OrderAPI.swift in Sources */,
 				D670C2172B3DCA32008E4514 /* Constants.swift in Sources */,
 				D68C708A2B346F1D005C80F6 /* DishListTableViewCell.swift in Sources */,
 				D68C70912B34761D005C80F6 /* ListOrdersViewController.swift in Sources */,
@@ -624,19 +696,25 @@
 				D68C70442B336276005C80F6 /* AppDelegate.swift in Sources */,
 				D670C21A2B3DCA9F008E4514 /* UserModel.swift in Sources */,
 				D698AFB62B3EF9EF0014D837 /* FirebaseCollectionRef.swift in Sources */,
+				D698AFBB2B3F2B940014D837 /* PrfileTableViewController.swift in Sources */,
 				D68C70612B336B2E005C80F6 /* OnboardingSlides.swift in Sources */,
 				D68C70A02B349CE9005C80F6 /* AllDishes.swift in Sources */,
 				D670C1DB2B3DC2E0008E4514 /* BaseResponse.swift in Sources */,
+				D698AFF22B42152D0014D837 /* UIImage+Ext.swift in Sources */,
 				D68C70462B336276005C80F6 /* SceneDelegate.swift in Sources */,
 				D670C1D72B3DC29F008E4514 /* TargetType.swift in Sources */,
 				D68C709A2B348191005C80F6 /* Method.swift in Sources */,
 				D68C705C2B336667005C80F6 /* OnboardingViewController.swift in Sources */,
 				D68C70832B33A100005C80F6 /* DishDetailViewController.swift in Sources */,
+				D698AFEB2B41E77A0014D837 /* CategoriesAPI.swift in Sources */,
 				D68C70672B337830005C80F6 /* HomeViewController.swift in Sources */,
 				D68C706E2B337BEC005C80F6 /* DishCategory.swift in Sources */,
 				D68C707F2B3387FF005C80F6 /* DishLandscapeCollectionViewCell.swift in Sources */,
+				D698AFEE2B41E8670014D837 /* LishDishesNetworking.swift in Sources */,
+				D698AFC02B41B2770014D837 /* ProfileViewController.swift in Sources */,
 				D68C70982B347C19005C80F6 /* Route.swift in Sources */,
 				D670C1CF2B3DAF4E008E4514 /* GettingStartedViewController.swift in Sources */,
+				D698AFBE2B3F3BCD0014D837 /* AboutViewController.swift in Sources */,
 				D68C70962B347B95005C80F6 /* NetworkService.swift in Sources */,
 				D68C70702B337CC8005C80F6 /* String+Ext.swift in Sources */,
 				D68C70732B337F7B005C80F6 /* CardView.swift in Sources */,
@@ -647,7 +725,9 @@
 				D68C707B2B3383E7005C80F6 /* Dish.swift in Sources */,
 				D68C70852B33A2D9005C80F6 /* UIViewController+Ext.swift in Sources */,
 				D68C709E2B34925A005C80F6 /* APIResponse.swift in Sources */,
+				D6B55D522B42F5CA00E241B2 /* OrderNetworking.swift in Sources */,
 				D670C1D92B3DC2B9008E4514 /* BaseAPI.swift in Sources */,
+				D698AFF02B41E9530014D837 /* ListDishesAPI.swift in Sources */,
 				D670C21D2B3DD5F3008E4514 /* FirebaseUserListener.swift in Sources */,
 				D670C1D12B3DB952008E4514 /* UIButton+Ext.swift in Sources */,
 				D68C70772B3381FF005C80F6 /* DishPortraitCollectionViewCell.swift in Sources */,

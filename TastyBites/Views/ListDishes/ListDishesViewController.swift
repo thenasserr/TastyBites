@@ -24,15 +24,15 @@ class ListDishesViewController: UIViewController {
       title = category.name
       registerCells()
       ProgressHUD.show()
-      NetworkService.shared.fetchCategoryDishes(categoryId: category.id ?? "") { [weak self] result in
-        switch result {
 
+      ListDishesAPI.shared.getDishes(categoryId: category.id ?? "") { [weak self] result in
+        switch result {
         case .success(let dishes):
           ProgressHUD.dismiss()
-          self?.dishes = dishes
+          self?.dishes = dishes.data!
           self?.tableView.reloadData()
         case .failure(let error):
-          ProgressHUD.showError(error.localizedDescription)
+          print(error.localizedDescription)
         }
       }
     }
