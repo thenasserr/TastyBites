@@ -18,5 +18,4 @@ class CategoriesAPI: BaseAPI<CategoriesNetworking> {
           completion(result)
       }
   }
-  
 }

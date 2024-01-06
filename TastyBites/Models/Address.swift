@@ -8,9 +8,9 @@
 import Foundation
 
 
-struct Address {
-  let name: String
-  let city: String
-  let street: String
-  let phone: String
+struct Address: Codable {
+  let name: String?
+  let city: String?
+  let street: String?
+  let phone: String?
 }

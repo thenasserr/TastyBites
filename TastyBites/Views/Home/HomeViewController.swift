@@ -23,7 +23,6 @@ class HomeViewController: UIViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
-
     registerCells()
     ProgressHUD.show()
 
@@ -47,22 +46,9 @@ class HomeViewController: UIViewController {
       }
     }
 
-//    NetworkService.shared.fetchAllCategories { [weak self] (result) in
-//      switch result {
-//      case .success(let allDishes):
-//        ProgressHUD.dismiss()
-////        print(allDishes)
-//        self?.categories = allDishes.categories ?? []
-//        self?.populars = allDishes.populars ?? []
-//        self?.specials = allDishes.specials ?? []
-//        self?.categoryCollectionView.reloadData()
-//        self?.popularColletionView.reloadData()
-//        self?.specialsCollectionView.reloadData()
-//      case .failure(let error):
-//        ProgressHUD.showError(error.localizedDescription)
-//      }
-//    }
   }
+
+
 
   //MARK: - Register CollectionView Cell
   private func registerCells() {

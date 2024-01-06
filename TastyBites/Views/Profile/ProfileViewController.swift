@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController {
   
 
   private func showUserInfo() {
-    if let user = User.currentUser {
+    if let user = UserModel.currentUser {
       nameLabel.text = user.name
 
     }

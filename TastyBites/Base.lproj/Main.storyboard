@@ -334,6 +334,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdb-yb-g5Y">
+                                <rect key="frame" x="10" y="463" width="166" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="sLv-tn-qdH"/>
+                                </constraints>
+                                <color key="tintColor" red="0.1058823466" green="0.270588249" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forget Password?">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="forgetPasswordButtonPressed:" destination="hXq-r8-WW3" eventType="touchUpInside" id="pdq-YV-kiQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ABd-YJ-TaK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -348,7 +362,9 @@
                             <constraint firstItem="G5D-Hc-n3y" firstAttribute="top" secondItem="wki-vP-T2e" secondAttribute="bottom" constant="70" id="g8k-NT-M6S"/>
                             <constraint firstItem="YeB-N4-iCu" firstAttribute="top" secondItem="G5D-Hc-n3y" secondAttribute="bottom" constant="110" id="mG4-13-64z"/>
                             <constraint firstItem="ABd-YJ-TaK" firstAttribute="trailing" secondItem="G5D-Hc-n3y" secondAttribute="trailing" constant="10" id="o4m-EA-0s6"/>
+                            <constraint firstItem="wdb-yb-g5Y" firstAttribute="leading" secondItem="ABd-YJ-TaK" secondAttribute="leading" constant="10" id="rzO-MA-WNl"/>
                             <constraint firstItem="YeB-N4-iCu" firstAttribute="leading" secondItem="ABd-YJ-TaK" secondAttribute="leading" constant="10" id="uf1-8D-mxi"/>
+                            <constraint firstItem="wdb-yb-g5Y" firstAttribute="top" secondItem="G5D-Hc-n3y" secondAttribute="bottom" constant="10" id="y9M-Lc-PMg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4HE-Lj-NgD">
@@ -361,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJF-Ur-CMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766" y="-897"/>
+            <point key="canvasLocation" x="1765.6488549618321" y="-897.18309859154931"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Vxm-7a-pEy">

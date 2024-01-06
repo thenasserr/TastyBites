@@ -9,20 +9,22 @@ import UIKit
 
 class ContactUsViewController: UIViewController {
 
+  //MARK: - Vars
   var owner: [ContactUs] = []
 
   @IBOutlet weak var tableView: UITableView!
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     owner = [
       .init(image: UIImage(named: "ava")!, name: "Ibrahim Nasser", email: "thenasserr@gmail.com", number: "01553422032")
     ]
 
     configreTableView()
-    }
+  }
 
+  //MARK: - Setup TableView
   private func configreTableView() {
     tableView.delegate = self
     tableView.dataSource = self
@@ -31,6 +33,7 @@ class ContactUsViewController: UIViewController {
 
 }
 
+//MARK: - TabelView Delegate and DataSource
 extension ContactUsViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return owner.count
@@ -43,6 +46,6 @@ extension ContactUsViewController: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 150
+    return 150
   }
 }

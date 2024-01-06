@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController {
 
     }
 
-
+  //MARK: - Setup TableView
   private func configureTableView() {
     tableView.delegate = self
     tableView.dataSource = self
@@ -28,8 +28,8 @@ class SettingsViewController: UIViewController {
 
 }
 
+//MARK: - TabelView Delegate and DataSource
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
-
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return 4

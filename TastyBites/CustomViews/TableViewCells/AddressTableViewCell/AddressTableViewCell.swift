@@ -35,10 +35,10 @@ class AddressTableViewCell: UITableViewCell {
     }
 
 
-//  func setup(address: Address) {
-//    nameLabel.text = address.name
-//    cityLabel.text = address.city
-//    streetLabel.text = address.street
-//  }
+  func setup(address: Address) {
+    nameLabel.text = address.name
+    cityLabel.text = address.city
+    streetLabel.text = address.street
+  }
 
 }

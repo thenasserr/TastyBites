@@ -8,16 +8,22 @@
 import UIKit
 import ProgressHUD
 
-//protocol BackWithAddress: AnyObject {
-//  func back(address: [Address])
-//}
+protocol BackWithAddress: AnyObject {
+  func back(address: [Address])
+}
 
 class AddAddressViewController: UIViewController {
 
+  //MARK: - Vars
+  weak var delegate: BackWithAddress?
+  var data: [Address] = []
+
+  //MARK: - IBOutlets
   @IBOutlet weak var nameTextField: UITextField!
   @IBOutlet weak var cityTextField: UITextField!
   @IBOutlet weak var streetTextField: UITextField!
   @IBOutlet weak var phoneTextField: UITextField!
+
   override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,12 +45,13 @@ class AddAddressViewController: UIViewController {
       ProgressHUD.showError("Invalid phone number")
         return
     }
-    
-    let controller = AddressViewController()
-    self.navigationController?.pushViewController(controller, animated: true)
+    data = [
+      .init(name: name, city: city, street: address, phone: phone)
+    ]
+    delegate?.back(address: data)
+    self.navigationController?.popViewController(animated: true)
 
-
-
+//MARK: - Check the Validation of Phone Number
     func validatePhoneNumber(_ phoneNumber: String) -> Bool {
         let phoneRegex = "^[0-9+]{0,1}+[0-9]{5,11}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
@@ -52,5 +59,8 @@ class AddAddressViewController: UIViewController {
         return arrString.count > 2 && phoneNumber.first == "0" && arrString[1] == "1" && phoneTest.evaluate(with: phone)
     }
 
+  }
+  deinit {
+    print("AddAddressViewController Deaalocated")
   }
 }

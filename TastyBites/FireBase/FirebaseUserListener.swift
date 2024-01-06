@@ -38,7 +38,7 @@ struct FirebaseUserListener {
         }
       }
       if authResult?.user != nil {
-        let user = User(id: (authResult?.user.uid)!, name: name, email: email, personalIamge: "")
+        let user = UserModel(id: (authResult?.user.uid)!, name: name, email: email, personalIamge: "")
         saveUserToFirestore(user)
         saveUserLocally(user)
       }
@@ -62,7 +62,7 @@ struct FirebaseUserListener {
 
   //MARK: - Save User To Firestore
 
-  func saveUserToFirestore(_ user: User) {
+  func saveUserToFirestore(_ user: UserModel) {
     do {
       try FirestoreRefrence(.User).document(user.id).setData(from: user)
     } catch {
@@ -78,7 +78,7 @@ struct FirebaseUserListener {
         return
       }
       let result = Result {
-        try? userDocument.data(as: User.self)
+        try? userDocument.data(as: UserModel.self)
       }
 
       switch result {

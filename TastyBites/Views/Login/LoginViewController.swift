@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
           let password = passwordTextField.text else {
       return
     }
-    if isDataInputedFor() {
+    if isDataInputedFor(mode: "login") {
       FirebaseUserListener.shared.loginUser(email: email, password: password) { [weak self] error, isEmailVerified in
         if error == nil {
           if isEmailVerified {
@@ -48,10 +48,35 @@ class LoginViewController: UIViewController {
   }
 
   //MARK: - Check Validation
-  private func isDataInputedFor() -> Bool {
-    return passwordTextField.text != "" && emailTextField.text != ""
+  private func isDataInputedFor(mode: String) -> Bool {
+    switch mode {
+    case "login":
+      return passwordTextField.text != "" && emailTextField.text != ""
+    case "forgetPassword":
+      return emailTextField.text != ""
+
+    default:
+      return false
+    }
+
   }
 
+
+  @IBAction func forgetPasswordButtonPressed(_ sender: Any) {
+    if isDataInputedFor(mode: "forgetPassword") {
+      FirebaseUserListener.shared.resetPassword(email: emailTextField.text!) { error in
+        if error == nil {
+          ProgressHUD.showSuccess("Reset password email has been sent")
+        } else {
+          ProgressHUD.showError(error?.localizedDescription)
+        }
+      }
+    } else {
+      ProgressHUD.showError("Email Field Is Required")
+    }
+
+
+  }
   
   @IBAction func signupButtonPressed(_ sender: Any) {
     let controller = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController

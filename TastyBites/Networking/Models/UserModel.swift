@@ -10,22 +10,23 @@ import UIKit
 import Firebase
 import FirebaseFirestoreSwift
 
-struct User: Codable {
+struct UserModel: Codable {
   var id = ""
   var name: String
   var email: String
   var personalIamge = ""
 
+
   static var currentID: String {
     return Auth.auth().currentUser!.uid
   }
 
-  static var currentUser: User? {
+  static var currentUser: UserModel? {
     if Auth.auth().currentUser != nil {
       if let data = userDefaults.data(forKey: CurrentUser) {
         let decoder = JSONDecoder()
         do {
-          let userObject = try decoder.decode(User.self, from: data)
+          let userObject = try decoder.decode(UserModel.self, from: data)
           return userObject
         } catch {
           print(error.localizedDescription)
@@ -36,7 +37,7 @@ struct User: Codable {
   }
 }
 
-func saveUserLocally(_ user: User) {
+func saveUserLocally(_ user: UserModel) {
   let encoder = JSONEncoder()
   do {
     let data = try encoder.encode(user)
