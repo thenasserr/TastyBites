@@ -13,9 +13,9 @@ class ListDishesViewController: UIViewController {
   //MARK: - IBOutlet
   @IBOutlet weak var tableView: UITableView!
 
-  //MARK: - Vars
-  var category: DishCategory!
-  var dishes: [Dish] = []
+  // MARK: - Properties
+      var category: DishCategory!
+      var dishes: [Dish] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +25,40 @@ class ListDishesViewController: UIViewController {
       registerCells()
       ProgressHUD.show()
 
-      ListDishesAPI.shared.getDishes(categoryId: category.id ?? "") { [weak self] result in
-        switch result {
-        case .success(let dishes):
-          ProgressHUD.dismiss()
-          self?.dishes = dishes.data!
-          self?.tableView.reloadData()
-        case .failure(let error):
-          print(error.localizedDescription)
-        }
-      }
+      fetchDishesForCategory()
     }
+
+  func fetchDishesForCategory() {
+      ProgressHUD.show()
+
+      ListDishesAPI.shared.getDishes(categoryId: category.id ?? "") { [weak self] result in
+          switch result {
+          case .success(let dishListResponse):
+              self?.handleSuccessResponse(with: dishListResponse.data)
+          case .failure(let error):
+              self?.handleError(error)
+          }
+      }
+  }
+
+  // MARK: - Handle Success Response
+  private func handleSuccessResponse(with dishes: [Dish]?) {
+      ProgressHUD.dismiss()
+
+      guard let dishes = dishes else {
+          // Handle the case where dishes is nil or empty
+          return
+      }
+
+      self.dishes = dishes
+      self.tableView.reloadData()
+  }
+
+  // MARK: - Handle Error
+  private func handleError(_ error: Error) {
+      ProgressHUD.showError(error.localizedDescription)
+      print(error.localizedDescription)
+  }
 
   //MARK: - Register TableView Cells
   private func registerCells() {

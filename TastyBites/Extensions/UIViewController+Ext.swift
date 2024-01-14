@@ -8,12 +8,22 @@
 import UIKit
 
 extension UIViewController {
-  static var identifier: String {
-    return String(describing: self)
-  }
+    /// Get the storyboard identifier for the view controller.
+    static var identifier: String {
+        return String(describing: self)
+    }
 
-  static func instantiate() -> Self {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    return storyboard.instantiateViewController(withIdentifier: identifier) as! Self
-  }
+    /// Instantiate the view controller from the Main storyboard.
+    ///
+    /// Example:
+    /// ```
+    /// let viewController = YourViewController.instantiate()
+    /// ```
+    ///
+    /// - Returns: An instance of the view controller.
+    static func instantiate() -> Self {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: identifier) as! Self
+    }
 }
+

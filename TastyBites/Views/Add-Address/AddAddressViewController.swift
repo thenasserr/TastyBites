@@ -25,42 +25,57 @@ class AddAddressViewController: UIViewController {
   @IBOutlet weak var phoneTextField: UITextField!
 
   override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
+      setupKeyboardDismissGesture()
+  }
 
-        // Do any additional setup after loading the view.
-    }
+  private func setupKeyboardDismissGesture() {
+      let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+      tapGesture.cancelsTouchesInView = false
+      view.addGestureRecognizer(tapGesture)
+  }
+
+  @objc private func dismissKeyboard() {
+      view.endEditing(true)
+  }
 
   @IBAction func addAddressPressed(_ sender: Any) {
     guard
-        let name = nameTextField.text, !name.isEmpty,
-        let city = cityTextField.text, !city.isEmpty,
-        let address = streetTextField.text, !address.isEmpty,
-        let phone = phoneTextField.text ,!phone.isEmpty
+      let name = nameTextField.text, !name.isEmpty,
+      let city = cityTextField.text, !city.isEmpty,
+      let address = streetTextField.text, !address.isEmpty,
+      let phone = phoneTextField.text ,!phone.isEmpty
     else {
-      ProgressHUD.showError("All fileds must be not empty")
-        return
+      showError(NSLocalizedString("All fields must not be empty", comment: ""))
+      return
     }
 
     guard validatePhoneNumber(phone) else {
-      ProgressHUD.showError("Invalid phone number")
-        return
+      showError(NSLocalizedString("Invalid phone number", comment: ""))
+      return
     }
-    data = [
-      .init(name: name, city: city, street: address, phone: phone)
-    ]
+
+    // Assuming `data` is an array property
+    data = [.init(name: name, city: city, street: address, phone: phone)]
+
     delegate?.back(address: data)
-    self.navigationController?.popViewController(animated: true)
-
-//MARK: - Check the Validation of Phone Number
-    func validatePhoneNumber(_ phoneNumber: String) -> Bool {
-        let phoneRegex = "^[0-9+]{0,1}+[0-9]{5,11}$"
-        let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
-        let arrString = Array(phoneNumber)
-        return arrString.count > 2 && phoneNumber.first == "0" && arrString[1] == "1" && phoneTest.evaluate(with: phone)
-    }
-
+    navigationController?.popViewController(animated: true)
   }
+
+  // Helper method to show an error using ProgressHUD
+  private func showError(_ message: String) {
+    ProgressHUD.showError(message)
+  }
+
+  // MARK: - Check the Validation of Phone Number
+  func validatePhoneNumber(_ phoneNumber: String) -> Bool {
+    let phoneRegex = "^[0-9+]{0,1}+[0-9]{5,11}$"
+    let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
+    let arrString = Array(phoneNumber)
+    return arrString.count > 2 && phoneNumber.first == "0" && arrString[1] == "1" && phoneTest.evaluate(with: phoneNumber)
+  }
+
   deinit {
-    print("AddAddressViewController Deaalocated")
+    print("AddAddressViewController Deallocated")
   }
 }

@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 
-
 @IBDesignable extension UIButton {
 
+    // MARK: - Border Width
+
+    /// The width of the button's border.
     @IBInspectable var borderWidth: CGFloat {
         set {
             layer.borderWidth = newValue
@@ -20,7 +22,10 @@ import UIKit
         }
     }
 
-  @IBInspectable override var cornerRadius: CGFloat {
+    // MARK: - Corner Radius
+
+    /// The radius to use when drawing rounded corners for the button.
+    @IBInspectable override var cornerRadius: CGFloat {
         set {
             layer.cornerRadius = newValue
         }
@@ -29,6 +34,9 @@ import UIKit
         }
     }
 
+    // MARK: - Border Color
+
+    /// The color of the button's border.
     @IBInspectable var borderColor: UIColor? {
         set {
             guard let uiColor = newValue else { return }

@@ -10,14 +10,24 @@ import Kingfisher
 
 class CategoryCollectionViewCell: UICollectionViewCell {
 
-  static let identifier = String(describing: CategoryCollectionViewCell.self)
+  // MARK: - Properties
+
+      /// A static identifier for the cell.
+      static let identifier = String(describing: CategoryCollectionViewCell.self)
+
+      // MARK: - Outlets
 
   @IBOutlet weak var categoryImageView: UIImageView!
   @IBOutlet weak var categoryLabel: UILabel!
 
-  func setup(category: DishCategory) {
-    categoryImageView.kf.setImage(with: category.image?.asURL)
-    categoryLabel.text = category.name
+  // MARK: - Setup Method
+
+      /// Configure the cell with the provided category information.
+      ///
+      /// - Parameter category: The DishCategory model to display in the cell.
+      func setup(category: DishCategory) {
+          categoryImageView.kf.setImage(with: category.image?.asURL)
+          categoryLabel.text = category.name
+      }
   }
 
-}

@@ -14,45 +14,98 @@ class OnboardingViewController: UIViewController {
   @IBOutlet weak var nextButton: UIButton!
   @IBOutlet weak var pageControl: UIPageControl!
 
-  //MARK: - Vars
-  var slides: [OnboardingSlides] = []
-  var currentPage = 0 {
+  // MARK: - Properties
+
+  private var slides: [OnboardingSlides] = []
+  private var currentPage: Int = 0 {
     didSet {
-      pageControl.currentPage = currentPage
-      if currentPage == slides.count - 1 {
-        nextButton.setTitle("Get Started", for: .normal)
-      } else {
-        nextButton.setTitle("Next", for: .normal)
-      }
+      updateUIForCurrentPage()
     }
   }
-  override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+  // MARK: - View Lifecycle
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupOnboardingSlides()
+    setupUI()
+  }
+
+  // MARK: - Initial Setup
+
+  private func setupOnboardingSlides() {
     slides = [
-      .init(title: "Delicious Dishes", description: "Experience a variety of amazing dishes from different cultures around the world.", image: UIImage(named: "slide1")!),
-      .init(title: "World-Class Chefs", description: "Our dishes are prepared by only the best.", image: UIImage(named: "slide2")!),
-      .init(title: "Instant World-Wide Delivery", description: "Your orders will be delivered instantly irrespective of your location around the world.", image: UIImage(named: "slide3")!)
+      OnboardingSlides(title: "Delicious Dishes",
+                       description: "Experience a variety of amazing dishes from different cultures around the world.",
+                       image: UIImage(named: "slide1")!),
+      OnboardingSlides(title: "World-Class Chefs",
+                       description: "Our dishes are prepared by only the best.",
+                       image: UIImage(named: "slide2")!),
+      OnboardingSlides(title: "Instant World-Wide Delivery",
+                       description: "Your orders will be delivered instantly irrespective of your location around the world.",
+                       image: UIImage(named: "slide3")!)
     ]
+  }
+
+  private func setupUI() {
+    configurePageControl()
+    configureNextButton()
+  }
+
+  private func configurePageControl() {
     pageControl.numberOfPages = slides.count
+  }
+
+  private func configureNextButton() {
+    updateUIForCurrentPage()
+  }
+
+  // MARK: - UI Update
+
+  private func updateUIForCurrentPage() {
+    pageControl.currentPage = currentPage
+
+    if currentPage == slides.count - 1 {
+      nextButton.setTitle("Get Started", for: .normal)
+    } else {
+      nextButton.setTitle("Next", for: .normal)
     }
-  
+  }
+
+  // MARK: - Button Action
 
   @IBAction func nextButtonPressed(_ sender: Any) {
+    handleNextButtonAction()
+  }
+
+
+  // MARK: - Navigation
+
+  private func handleNextButtonAction() {
     if currentPage == slides.count - 1 {
-//      let controller = storyboard?.instantiateViewController(withIdentifier: "HomeNavigationC") as! UINavigationController
-      let controller = storyboard?.instantiateViewController(withIdentifier: "GettingStartedViewController") as! GettingStartedViewController
-      controller.modalPresentationStyle = .fullScreen
-      controller.modalTransitionStyle = .flipHorizontal
-      present(controller, animated: true, completion: nil)
+      navigateToGettingStarted()
     } else {
-      currentPage += 1
-      let indexPath = IndexPath(item: currentPage, section: 0)
-      collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+      moveToNextSlide()
     }
   }
+
+  private func navigateToGettingStarted() {
+    let gettingStartedController = storyboard?.instantiateViewController(withIdentifier: "GettingStartedViewController") as! GettingStartedViewController
+    gettingStartedController.modalPresentationStyle = .fullScreen
+    gettingStartedController.modalTransitionStyle = .flipHorizontal
+    present(gettingStartedController, animated: true, completion: nil)
+  }
+
+  private func moveToNextSlide() {
+    currentPage += 1
+    let indexPath = IndexPath(item: currentPage, section: 0)
+    collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+  }
+
 }
+
+
+// MARK: - CollectionView Delegate and DataSource
 
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -74,3 +127,4 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     currentPage = Int(scrollView.contentOffset.x / width)
   }
 }
+

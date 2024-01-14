@@ -14,47 +14,44 @@ class ListOrdersViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
 
   //MARK: - Vars
-  var orders: [Order] = []
+  private var orders: [Order] = []
+  private var isLoading = false
+
+  //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Do any additional setup after loading the view.
     title = "Orders"
     registerCells()
-    ProgressHUD.show()
-
-
+    fetchData()
   }
 
-  override func viewDidAppear(_ animated: Bool) {
+  //MARK: - Fetch Orders
+  private func fetchData() {
+    guard !isLoading else { return }
+    isLoading = true
+    ProgressHUD.show()
 
     OrderAPI.shared.fetchOrders { [weak self] result in
-      switch result {
-
-      case .success(let orders):
-        ProgressHUD.dismiss()
-        let data = orders.data
-        print(data)
-        self?.orders = data ?? []
-        self?.tableView.reloadData()
-      case .failure(let error):
-        ProgressHUD.showError(error.localizedDescription)
-      }
+      self?.handleFetchResult(result)
     }
+  }
 
+  private typealias FetchResult = Result<BaseResponse<[Order]>, Error>
 
-//    NetworkService.shared.fetchOrders { [weak self] (result) in
-//      switch result {
-//      case .success(let orders):
-//        ProgressHUD.dismiss()
-//        print(orders)
-//        self?.orders = orders
-//
-//        self?.tableView.reloadData()
-//      case .failure(let error):
-//        ProgressHUD.showError(error.localizedDescription)
-//      }
-//    }
+  private func handleFetchResult(_ result: FetchResult) {
+    isLoading = false
+    ProgressHUD.dismiss()
+
+    switch result {
+    case .success(let ordersResponse):
+      if let data = ordersResponse.data {
+        self.orders = data
+        tableView.reloadData()
+      }
+    case .failure(let error):
+      ProgressHUD.showError(error.localizedDescription)
+    }
   }
 
   //MARK: - Register TableView Cells

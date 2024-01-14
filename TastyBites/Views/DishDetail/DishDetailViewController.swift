@@ -17,16 +17,21 @@ class DishDetailViewController: UIViewController {
   @IBOutlet weak var descriptionLabel: UILabel!
   @IBOutlet weak var nameTextField: UITextField!
 
-  //MARK: - Vars
+  // MARK: - Properties
   var dish: Dish!
 
+  // MARK: - Lifecycle Methods
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
+    setupUI()
+  }
 
-        // Do any additional setup after loading the view.
+  // MARK: - UI Setup
+  private func setupUI() {
     populateView()
-    }
-//MARK: - To Pobulate Data in DetailViewController
+  }
+
+  // MARK: - Populate View
   private func populateView() {
     dishImageView.kf.setImage(with: dish.image?.asURL)
     titleLabel.text = dish.name
@@ -34,34 +39,23 @@ class DishDetailViewController: UIViewController {
     descriptionLabel.text = dish.description
   }
 
+  // MARK: - Place Order Button Action
   @IBAction func placeOrderButtonPressed(_ sender: Any) {
-    guard let name = nameTextField.text?.trimmingCharacters(in: .whitespaces),
-            !name.isEmpty else {
+    guard let name = nameTextField.text?.trimmingCharacters(in: .whitespaces), !name.isEmpty else {
       ProgressHUD.showError("Please Enter Your Name")
       return
     }
     ProgressHUD.show("Placing Order...")
 
-//    OrderAPI.shared.placeOrder(dishId: dish.id ?? "", name: name) { result in
-//      switch result {
-//      case .success(_):
-//        ProgressHUD.showSuccess("Your order has been recevied. 👨‍🍳")
-//      case .failure(let error):
-//        ProgressHUD.showError(error.localizedDescription)
-//      }
-//    }
+    NetworkService.shared.placeOrder(dishId: dish.id ?? "", name: name) { [weak self] result in
+      guard let self = self else { return }
 
-
-
-    NetworkService.shared.placeOrder(dishId: dish.id ?? "", name: name) { result in
       switch result {
-
       case .success(_):
-        ProgressHUD.showSuccess("Your order has been recevied. 👨‍🍳")
+        ProgressHUD.showSuccess("Your order has been received. 👨‍🍳")
       case .failure(let error):
         ProgressHUD.showError(error.localizedDescription)
       }
     }
   }
-  
 }

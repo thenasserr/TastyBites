@@ -6,26 +6,46 @@
 //
 import Foundation
 
-// MARK: - Welcome
+// MARK: - Resault
 struct Resaults: Codable {
     let data: AllDishes
 }
 
 // MARK: - DataClass
-struct AllDishees: Codable {
-    let categories: [Category]
-    let populars, specials: [Popular]
+struct AllDishes: Codable {
+    let categories: [DishCategory]?
+    let populars: [Dish]?
+    let specials: [Dish]?
 }
 
-// MARK: - Category
-struct Category: Codable {
-    let id, title: String
-    let image: String
+// MARK: - Dish Category
+struct DishCategory: Codable {
+    let id, name, image: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name = "title"
+        case image
+    }
 }
 
-// MARK: - Popular
-struct Popular: Codable {
-    let id, name, description: String
-    let image: String
-    let calories: Int
+// MARK: - Dish
+struct Dish: Codable {
+  let id: String?
+  let name: String?
+  let description: String?
+  let image: String?
+  let calories: Int?
+
+  var formattedCalories: String {
+    return "\(calories ?? 0) clories"
+  }
 }
+
+// MARK: - Order
+struct Order: Codable {
+  let id: String?
+  let name: String
+  let dish: Dish?
+}
+

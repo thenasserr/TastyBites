@@ -9,8 +9,12 @@ import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
 
+  // MARK: - Properties
+
+  /// A static identifier for the cell.
   static let identifier = String(describing: SettingsTableViewCell.self)
 
+  // MARK: - Outlets
 
   @IBOutlet weak var imgView: UIImageView!
   @IBOutlet weak var settingsLabel: UILabel!

@@ -21,32 +21,36 @@ class HomeViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    // Do any additional setup after loading the view.
     registerCells()
     ProgressHUD.show()
 
+    fetchData()
+  }
 
-
-
+  // Fetch Data
+  private func fetchData() {
     CategoriesAPI.shared.getGategories { [weak self] result in
       switch result {
       case .success(let allDishes):
         ProgressHUD.dismiss()
-//        print(allDishes)
         self?.categories = allDishes.data?.categories ?? []
         self?.populars = allDishes.data?.populars ?? []
         self?.specials = allDishes.data?.specials ?? []
-        self?.categoryCollectionView.reloadData()
-        self?.popularColletionView.reloadData()
-        self?.specialsCollectionView.reloadData()
+        self?.updateCollectionViewData()
       case .failure(let error):
         print(error.localizedDescription)
         ProgressHUD.showError(error.localizedDescription)
       }
     }
-
   }
+
+  // Update Collection Views
+  private func updateCollectionViewData() {
+    categoryCollectionView.reloadData()
+    popularColletionView.reloadData()
+    specialsCollectionView.reloadData()
+  }
+
 
 
 
@@ -59,6 +63,7 @@ class HomeViewController: UIViewController {
     specialsCollectionView.register(UINib(nibName: DishLandscapeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DishLandscapeCollectionViewCell.identifier)
   }
 }
+
 
 //MARK: - CollectionView Delegate and DataSource
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -93,23 +98,31 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
       return UICollectionViewCell()
     }
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if collectionView == categoryCollectionView {
-
-      let controller = ListDishesViewController.instantiate()
-      controller.category = categories[indexPath.row]
-      navigationController?.pushViewController(controller, animated: true)
-//      controller.modalPresentationStyle = .fullScreen
-//      present(controller, animated: true)
-
+      navigateToListDishesViewController(forCategoryAtIndex: indexPath.row)
     } else {
       let controller = DishDetailViewController.instantiate()
       controller.dish = collectionView == popularColletionView ? populars[indexPath.row] : specials[indexPath.row]
       navigationController?.pushViewController(controller, animated: true)
-
     }
   }
+}
+
+// MARK: - Navigation
+extension HomeViewController {
+    func navigateToListDishesViewController(forCategoryAtIndex index: Int) {
+        let controller = ListDishesViewController.instantiate()
+        controller.category = categories[index]
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
+    func navigateToDishDetailViewController(forDish dish: Dish) {
+        let controller = DishDetailViewController.instantiate()
+        controller.dish = dish
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 

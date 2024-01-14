@@ -7,11 +7,16 @@
 
 import UIKit
 
+import UIKit
+
 extension UIView {
-  @IBInspectable var cornerRadius: CGFloat {
-    get { return cornerRadius }
-    set {
-      self.layer.cornerRadius = newValue
+    /// Corner radius of the view. Can be set directly in Interface Builder.
+    @IBInspectable var cornerRadius: CGFloat {
+        get { return layer.cornerRadius }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
     }
-  }
 }
+

@@ -9,11 +9,16 @@ import UIKit
 
 class ContactUsTableViewCell: UITableViewCell {
 
+  // MARK: - Properties
+
+  /// A static identifier for the cell.
+  static let identifier = String(describing: ContactUsTableViewCell.self)
+
+  // MARK: - Outlets
   @IBOutlet weak var imgView: UIImageView!
   @IBOutlet weak var emailLabel: UILabel!
   @IBOutlet weak var phoneLabel: UILabel!
   @IBOutlet weak var nameLabel: UILabel!
-  static let identifier = String(describing: ContactUsTableViewCell.self)
 
 
     override func awakeFromNib() {
@@ -21,17 +26,21 @@ class ContactUsTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+  override func setSelected(_ selected: Bool, animated: Bool) {
+          super.setSelected(selected, animated: animated)
+          // Configure the view for the selected state
+      }
 
-        // Configure the view for the selected state
-    }
+      // MARK: - Setup Method
 
-  func setup(owner: ContactUs) {
-    imgView.image = owner.image
-    emailLabel.text = owner.email
-    nameLabel.text = owner.name
-    phoneLabel.text = owner.number
-  }
+      /// Configure the cell with the provided contact information.
+      ///
+      /// - Parameter owner: The ContactUs model to display in the cell.
+      func setup(owner: ContactUs) {
+          imgView.image = owner.image
+          emailLabel.text = owner.email
+          nameLabel.text = owner.name
+          phoneLabel.text = owner.number
+      }
 
 }

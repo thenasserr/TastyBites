@@ -8,7 +8,17 @@
 import Foundation
 
 extension String {
-  var asURL: URL? {
-    return URL(string: self)
-  }
+    /// Convert the string to a URL.
+    ///
+    /// Example:
+    /// ```
+    /// let urlString = "https://example.com"
+    /// if let url = urlString.asURL {
+    ///     // Use the URL
+    /// }
+    /// ```
+    var asURL: URL? {
+        return URL(string: self)
+    }
 }
+
