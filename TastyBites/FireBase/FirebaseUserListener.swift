@@ -50,25 +50,41 @@ struct FirebaseUserListener {
   ///                 It takes an optional error parameter indicating any errors during registration.
   func registerNewUser(email: String, password: String, name: String, completion: @escaping (Error?) -> Void) {
     // Create user account in Firebase Authentication
-    Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-      // Call completion with the registration error (if any)
-      completion(error)
+//    Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+//      // Call completion with the registration error (if any)
+//      completion(error)
+//
+//      // Check if user creation was successful and there is no registration error
+//      if error == nil {
+//        // Send email verification
+//        authResult!.user.sendEmailVerification { error in
+//          completion(error)
+//        }
+//      }
+//      if authResult?.user != nil {
+//        let user = UserModel(id: (authResult?.user.uid)!, name: name, email: email, personalIamge: "")
+//        // Save user data to Firestore
+//        saveUserToFirestore(user)
+//        // Save user data locally
+//        saveUserLocally(user)
+//      }
+//    }
+      
+      Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        completion(error)
+        if error == nil {
+          print("Success")
+          authResult?.user.sendEmailVerification(completion: { error in
+            completion(error)
+          })
+        }
+        if authResult?.user != nil {
+          let user = UserModel(id: (authResult?.user.uid)!, name: name, email: email, personalIamge: "")
 
-      // Check if user creation was successful and there is no registration error
-      if error == nil {
-        // Send email verification
-        authResult!.user.sendEmailVerification { error in
-          completion(error)
+          self.saveUserToFirebase(user)
+          saveUserLocally(user)
         }
       }
-      if authResult?.user != nil {
-        let user = UserModel(id: (authResult?.user.uid)!, name: name, email: email, personalIamge: "")
-        // Save user data to Firestore
-        saveUserToFirestore(user)
-        // Save user data locally
-        saveUserLocally(user)
-      }
-    }
   }
 
 
@@ -102,18 +118,14 @@ struct FirebaseUserListener {
   /// Saves a user model to Firestore.
   ///
   /// - Parameter user: The user model to be saved.
-  func saveUserToFirestore(_ user: UserModel) {
-    do {
-      // Use FirestoreReference extension to get a reference to the "User" collection
-      let userRef = FirestoreRefrence(.User).document(user.id)
+    func saveUserToFirebase(_ user: UserModel) {
+     do {
+       try FirestoreRefrence(.User).document(user.id).setData(from: user)
+     } catch {
+       print(error.localizedDescription)
+     }
 
-      // Set user data in Firestore using Codable
-      try userRef.setData(from: user)
-    } catch {
-      // Print the error if saving fails
-      print("Error saving user to Firestore: \(error.localizedDescription)")
-    }
-  }
+   }
 
   // MARK: - Download User Data From Firestore
 

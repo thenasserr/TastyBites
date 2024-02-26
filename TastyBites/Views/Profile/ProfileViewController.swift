@@ -31,14 +31,6 @@ class ProfileViewController: UIViewController {
     handleSignout()
   }
 
-  @IBAction func aboutButtonPressed(_ sender: Any) {
-    navigateToAbout()
-  }
-
-  @IBAction func settingsPressed(_ sender: Any) {
-    navigateToSettings()
-  }
-
   // MARK: - Private Methods
 
   /// Displays user information in the UI.
@@ -60,19 +52,6 @@ class ProfileViewController: UIViewController {
         }
       }
     }
-  }
-
-  /// Navigates to the 'About' screen.
-  private func navigateToAbout() {
-    let aboutViewController = AboutViewController.instantiate()
-    aboutViewController.modalPresentationStyle = .fullScreen
-    navigationController?.pushViewController(aboutViewController, animated: true)
-  }
-
-  /// Navigates to the 'Settings' screen.
-  private func navigateToSettings() {
-    let settingsViewController = SettingsViewController.instantiate()
-    navigationController?.pushViewController(settingsViewController, animated: true)
   }
 }
 

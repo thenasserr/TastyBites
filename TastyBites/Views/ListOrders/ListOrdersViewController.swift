@@ -47,7 +47,9 @@ class ListOrdersViewController: UIViewController {
     case .success(let ordersResponse):
       if let data = ordersResponse.data {
         self.orders = data
-        tableView.reloadData()
+          DispatchQueue.main.async {
+              self.tableView.reloadData()
+          }
       }
     case .failure(let error):
       ProgressHUD.showError(error.localizedDescription)
