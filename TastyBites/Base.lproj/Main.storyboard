@@ -471,7 +471,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNy-jw-oG0">
                                 <rect key="frame" x="10" y="541.33333333333337" width="373" height="50"/>
-                                <color key="backgroundColor" red="0.1058823466" green="0.270588249" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.10588235294117647" green="0.270588249" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1ib-oC-uAY"/>
                                 </constraints>
@@ -844,16 +844,37 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzD-av-4Pv">
+                                <rect key="frame" x="20" y="619" width="353" height="50"/>
+                                <color key="backgroundColor" red="0.10588235294117647" green="0.27058823529411763" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0ZA-L7-lVw"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Out"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signoutPressed:" destination="CTc-UH-elm" eventType="touchUpInside" id="if6-tv-lUr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cFy-TX-sjk"/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="cFy-TX-sjk" firstAttribute="trailing" secondItem="bcx-T1-sFf" secondAttribute="trailing" constant="16" id="0hB-QD-10i"/>
+                            <constraint firstItem="CzD-av-4Pv" firstAttribute="leading" secondItem="cFy-TX-sjk" secondAttribute="leading" constant="20" id="6AO-SM-1KO"/>
                             <constraint firstItem="bcx-T1-sFf" firstAttribute="leading" secondItem="cFy-TX-sjk" secondAttribute="leading" constant="16" id="Q0N-O5-M9b"/>
+                            <constraint firstItem="cFy-TX-sjk" firstAttribute="trailing" secondItem="CzD-av-4Pv" secondAttribute="trailing" constant="20" id="UUb-SS-BjA"/>
                             <constraint firstItem="4s4-YB-iJr" firstAttribute="leading" secondItem="cFy-TX-sjk" secondAttribute="leading" constant="16" id="hsL-7R-eI6"/>
                             <constraint firstItem="bcx-T1-sFf" firstAttribute="top" secondItem="4s4-YB-iJr" secondAttribute="bottom" constant="70" id="jX3-E2-yoi"/>
                             <constraint firstItem="4s4-YB-iJr" firstAttribute="top" secondItem="cFy-TX-sjk" secondAttribute="top" id="rBx-uJ-U8E"/>
                             <constraint firstItem="cFy-TX-sjk" firstAttribute="trailing" secondItem="4s4-YB-iJr" secondAttribute="trailing" constant="16" id="v9f-Fk-wGl"/>
+                            <constraint firstItem="cFy-TX-sjk" firstAttribute="bottom" secondItem="CzD-av-4Pv" secondAttribute="bottom" constant="100" id="vXe-2D-mmX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Mpr-ed-FcV">

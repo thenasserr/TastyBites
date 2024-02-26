@@ -11,7 +11,6 @@ class ProfileViewController: UIViewController {
 
   // MARK: - Outlets
 
-  @IBOutlet weak var tabelView: UITableView!
   @IBOutlet weak var userImage: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   // MARK: - Properties
@@ -20,6 +19,7 @@ class ProfileViewController: UIViewController {
   // MARK: - View Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
+      showUserInfo()
   }
 
   override func viewDidAppear(_ animated: Bool) {
