@@ -13,3 +13,6 @@ struct APIResponse<T: Decodable>: Decodable {
   let data: T?
   let error: String?
 }
+
+struct EmptyResponse: Codable {
+}

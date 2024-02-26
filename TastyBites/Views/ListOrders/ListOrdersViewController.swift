@@ -20,39 +20,29 @@ class ListOrdersViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        orders.removeAll()
         title = "Orders"
         registerCells()
-        fetchData()
+        ProgressHUD.show()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        fetchOrders()
+        orders.removeAll()
     }
     
     //MARK: - Fetch Orders
-    private func fetchData() {
-        guard !isLoading else { return }
-        isLoading = true
-        ProgressHUD.show()
-        
-        OrderAPI.shared.fetchOrders { [weak self] result in
-            self?.handleFetchResult(result)
-        }
-    }
-    
-    private typealias FetchResult = Result<BaseResponse<[Order]>, Error>
-    
-    private func handleFetchResult(_ result: FetchResult) {
-        isLoading = false
-        ProgressHUD.dismiss()
-        
-        switch result {
-            case .success(let ordersResponse):
-                if let data = ordersResponse.data {
-                    self.orders = data
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            case .failure(let error):
-                ProgressHUD.showError(error.localizedDescription)
+    private func fetchOrders() {
+        NetworkService.shared.fetchOrders { [weak self] (result) in
+            switch result {
+                case .success(let orders):
+                    ProgressHUD.dismiss()
+                    
+                    self?.orders = orders
+                    self?.tableView.reloadData()
+                case .failure(let error):
+                    ProgressHUD.showError(error.localizedDescription)
+            }
         }
     }
     

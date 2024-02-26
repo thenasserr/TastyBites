@@ -94,8 +94,6 @@
 		D6B55D6C2B43443900E241B2 /* ContactUsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B55D6A2B43443900E241B2 /* ContactUsTableViewCell.swift */; };
 		D6B55D6D2B43443900E241B2 /* ContactUsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B55D6B2B43443900E241B2 /* ContactUsTableViewCell.xib */; };
 		D6B55D6F2B43457A00E241B2 /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B55D6E2B43457900E241B2 /* ContactUs.swift */; };
-		D6C6C61A2B4DD13500836A05 /* CompositionalLayoutableSection in Frameworks */ = {isa = PBXBuildFile; productRef = D6C6C6192B4DD13500836A05 /* CompositionalLayoutableSection */; };
-		D6C6C6292B4DD2DD00836A05 /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = D6C6C6282B4DD2DD00836A05 /* ViewAnimator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,7 +173,6 @@
 				D670C2042B3DC411008E4514 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				D670C20A2B3DC411008E4514 /* FirebaseMessaging in Frameworks */,
 				D670C1EA2B3DC411008E4514 /* FirebaseAppDistribution-Beta in Frameworks */,
-				D6C6C61A2B4DD13500836A05 /* CompositionalLayoutableSection in Frameworks */,
 				D670C1EE2B3DC411008E4514 /* FirebaseAuthCombine-Community in Frameworks */,
 				D670C1FA2B3DC411008E4514 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				D670C1E42B3DC411008E4514 /* FirebaseAnalyticsSwift in Frameworks */,
@@ -184,7 +181,6 @@
 				D670C1E02B3DC411008E4514 /* FirebaseAnalytics in Frameworks */,
 				D670C1FC2B3DC411008E4514 /* FirebaseFirestoreSwift in Frameworks */,
 				D670C1E22B3DC411008E4514 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
-				D6C6C6292B4DD2DD00836A05 /* ViewAnimator in Frameworks */,
 				D670C1E82B3DC411008E4514 /* FirebaseAppCheck in Frameworks */,
 				D670C20C2B3DC411008E4514 /* FirebasePerformance in Frameworks */,
 				D670C2022B3DC411008E4514 /* FirebaseInAppMessaging-Beta in Frameworks */,
@@ -610,8 +606,6 @@
 				D670C20F2B3DC411008E4514 /* FirebaseRemoteConfigSwift */,
 				D670C2112B3DC411008E4514 /* FirebaseStorage */,
 				D670C2132B3DC411008E4514 /* FirebaseStorageCombine-Community */,
-				D6C6C6192B4DD13500836A05 /* CompositionalLayoutableSection */,
-				D6C6C6282B4DD2DD00836A05 /* ViewAnimator */,
 			);
 			productName = TastyBites;
 			productReference = D68C70402B336276005C80F6 /* TastyBites.app */;
@@ -643,8 +637,6 @@
 			mainGroup = D68C70372B336276005C80F6;
 			packageReferences = (
 				D670C1DE2B3DC411008E4514 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				D6C6C6182B4DD13500836A05 /* XCRemoteSwiftPackageReference "CompositionalLayoutableSection" */,
-				D6C6C6272B4DD2DD00836A05 /* XCRemoteSwiftPackageReference "ViewAnimator" */,
 			);
 			productRefGroup = D68C70412B336276005C80F6 /* Products */;
 			projectDirPath = "";
@@ -1007,22 +999,6 @@
 				minimumVersion = 10.19.1;
 			};
 		};
-		D6C6C6182B4DD13500836A05 /* XCRemoteSwiftPackageReference "CompositionalLayoutableSection" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ahmed-yamany/CompositionalLayoutableSection.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		D6C6C6272B4DD2DD00836A05 /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1160,16 +1136,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D670C1DE2B3DC411008E4514 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
-		};
-		D6C6C6192B4DD13500836A05 /* CompositionalLayoutableSection */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D6C6C6182B4DD13500836A05 /* XCRemoteSwiftPackageReference "CompositionalLayoutableSection" */;
-			productName = CompositionalLayoutableSection;
-		};
-		D6C6C6282B4DD2DD00836A05 /* ViewAnimator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D6C6C6272B4DD2DD00836A05 /* XCRemoteSwiftPackageReference "ViewAnimator" */;
-			productName = ViewAnimator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

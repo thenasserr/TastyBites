@@ -91,6 +91,19 @@ struct NetworkService {
       }
     }.resume()
   }
+    
+    func deleteOrder(orderId: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        let route = Route.deleteOrder(orderId)
+        request(route: route, method: .delete) { (result: Result<EmptyResponse, Error>) in
+            switch result {
+            case .success:
+                completion(.success(()))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
 
   private func handleResponse<T: Decodable> (result: Result<Data, Error>?, 
                                              completion: @escaping (Result<T, Error>) -> Void) {
